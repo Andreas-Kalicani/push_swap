@@ -3,21 +3,46 @@
 /*                                                        :::      ::::::::   */
 /*   linked_list_a.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
+/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 16:32:04 by andreasgjer       #+#    #+#             */
-/*   Updated: 2023/12/29 17:13:54 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2023/12/29 17:55:11 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 
-t_stack_node	*create_list(int argc, char **argv)
+int	ft_atoi(const char *str)
+{
+	int	i;
+	int	s;
+	int	res;
+
+	i = 0;
+	s = 1;
+	res = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			s = -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = (res * 10) + (str[i] - '0');
+		i++;
+	}
+	return (res * s);
+}
+
+t_stack_node_a	*create_list(int argc, char **argv)
 {
 	int				i;
-	t_stack_node	*stack_a;
-	t_stack_node	*tmp;
+	t_stack_node_a	*stack_a;
+	t_stack_node_a	*tmp;
 
 	i = 1;
 	stack_a = create_stack_a(ft_atoi(argv[i]));
@@ -32,11 +57,11 @@ t_stack_node	*create_list(int argc, char **argv)
 	return (stack_a);
 }
 
-t_stack_node	*create_stack_a(int val)
+t_stack_node_a	*create_stack_a(int val)
 {
-	t_stack_node	*stack_a;
+	t_stack_node_a	*stack_a;
 
-	stack_a = malloc(sizeof(t_stack_node));
+	stack_a = malloc(sizeof(t_stack_node_a));
 	if (!stack_a)
 	{
 		free(stack_a);
@@ -47,11 +72,11 @@ t_stack_node	*create_stack_a(int val)
 	return (stack_a);
 }
 
-t_stack_node	*add_new_node(t_stack_node *stack_a, int val)
+t_stack_node_a	*add_new_node_a(t_stack_node_a *stack_a, int val)
 {
-	t_stack_node	*new_node;
+	t_stack_node_a	*new_node;
 
-	new_node = malloc(sizeof(t_stack_node));
+	new_node = malloc(sizeof(t_stack_node_a));
 	if (!new_node)
 	{
 		free(new_node);
@@ -62,7 +87,7 @@ t_stack_node	*add_new_node(t_stack_node *stack_a, int val)
 	return (new_node);
 }
 
-int	stack_size(t_stack_node *stack_a)
+int	stack_size(t_stack_node_a *stack_a)
 {
 	int	index;
 
@@ -75,9 +100,9 @@ int	stack_size(t_stack_node *stack_a)
 	return (index);
 }
 
-void	clear_nodes(t_stack_node *stack_a)
+void	clear_nodes(t_stack_node_a *stack_a)
 {
-	t_stack_node	*lst;
+	t_stack_node_a	*lst;
 
 	while (stack_a != NULL)
 	{

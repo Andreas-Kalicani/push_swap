@@ -1,26 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/08 10:15:50 by akalican          #+#    #+#             */
-/*   Updated: 2023/12/29 18:44:54 by akalican         ###   ########.fr       */
+/*   Created: 2023/12/29 17:30:33 by akalican          #+#    #+#             */
+/*   Updated: 2023/12/29 18:43:07 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-int	main(void)
+/*
+int	ft_atoi(const char *str)
 {
-    t_stack_node_b *stack_b;
-    int val;
+	int	i;
+	int	s;
+	int	res;
 
-    val = 1;
-    stack_b = create_list_b(1);
-	printf("%p\n", stack_b);
-    printf("%p", stack_b->next);
+	i = 0;
+	s = 1;
+	res = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || str[i] == 32)
+		i++;
+	if (str[i] == '-' || str[i] == '+')
+	{
+		if (str[i] == '-')
+			s = -1;
+		i++;
+	}
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = (res * 10) + (str[i] - '0');
+		i++;
+	}
+	return (res * s);
 }
+*/
