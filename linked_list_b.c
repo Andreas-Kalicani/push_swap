@@ -6,14 +6,14 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 17:53:23 by akalican          #+#    #+#             */
-/*   Updated: 2023/12/29 19:04:41 by akalican         ###   ########.fr       */
+/*   Updated: 2023/12/29 20:23:17 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 
-t_stack_node_b  *create_list_b(int argc, char argv[])
+t_stack_node_b  *create_list_b(int argc, char **argv)
 {
     int i;
     t_stack_node_b  *stack_b;

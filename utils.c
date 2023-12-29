@@ -6,11 +6,12 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 17:30:33 by akalican          #+#    #+#             */
-/*   Updated: 2023/12/29 18:43:07 by akalican         ###   ########.fr       */
+/*   Updated: 2023/12/29 20:36:20 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include  <stdio.h>
 
 /*
 int	ft_atoi(const char *str)
@@ -38,3 +39,27 @@ int	ft_atoi(const char *str)
 	return (res * s);
 }
 */
+
+void print_stack_a(t_stack_node_a *head)
+{
+    t_stack_node_a *current_node = head;
+
+    while (current_node != NULL)
+    {
+        printf("%d ", current_node->nbr);
+        current_node = current_node->next;
+    }
+    printf("\n");
+}
+
+void print_stack_b(t_stack_node_b *head)
+{
+    t_stack_node_b *current_node = head;
+
+    while (current_node != NULL)
+    {
+        printf("%d ", current_node->nbr);
+        current_node = current_node->next;
+    }
+    printf("\n");
+}
