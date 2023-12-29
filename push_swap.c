@@ -3,29 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:15:50 by akalican          #+#    #+#             */
-/*   Updated: 2023/12/08 14:30:19 by akalican         ###   ########.fr       */
+/*   Updated: 2023/12/28 16:14:54 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "libft/libft.h"
+#include "push_swap.h"
 #include <stdio.h>
+#include <stdlib.h>
 
-int main(int argc, char *argv[])
+int	main(int argc, char **argv)
 {
-    char str[] = "hello";
-    
-    if (argc != 1)
-    {
-        while (*argv)
-        {
-            printf(" %s", *argv);
-            argv++;
-        }
-        printf("%c", '\n');
-    }
-    return (0);
+	create_list(argc, argv);
 }
