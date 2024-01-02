@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_a_to_b.c                                      :+:      :+:    :+:   */
+/*   push_b_to_a.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/29 19:58:24 by akalican          #+#    #+#             */
-/*   Updated: 2024/01/01 13:13:52 by andreasgjer      ###   ########.fr       */
+/*   Created: 2024/01/01 13:13:56 by andreasgjer       #+#    #+#             */
+/*   Updated: 2024/01/01 13:23:16 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push_a_to_b(t_stack_node_a **stack_a, t_stack_node_b **stack_b)
+void	push_b_to_a(t_stack_node_b **stack_b, t_stack_node_a **stack_a)
 {
-	t_stack_node_a	*temp;
-	t_stack_node_b	*new_node_b;
+	t_stack_node_b	*temp;
+	t_stack_node_a	*new_node_a;
 
-	if (*stack_a != NULL)
+	if (*stack_b != NULL)
 	{
-		temp = *stack_a;
-		*stack_a = (*stack_a)->next;
-		new_node_b = create_newnode_b(temp->nbr);
-		new_node_b->next = *stack_b;
-		*stack_b = new_node_b;
+		temp = *stack_b;
+		*stack_b = (*stack_b)->next;
+		new_node_a = create_stack_a(temp->next);
+		new_node_a->next = *stack_a;
+		*stack_a = new_node_a;
 	}
 }
