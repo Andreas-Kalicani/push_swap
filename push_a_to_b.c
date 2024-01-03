@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   push_a_to_b.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
+/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 19:58:24 by akalican          #+#    #+#             */
-/*   Updated: 2024/01/01 13:13:52 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/01/02 13:48:31 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 void	push_a_to_b(t_stack_node_a **stack_a, t_stack_node_b **stack_b)
 {
@@ -24,5 +25,6 @@ void	push_a_to_b(t_stack_node_a **stack_a, t_stack_node_b **stack_b)
 		new_node_b = create_newnode_b(temp->nbr);
 		new_node_b->next = *stack_b;
 		*stack_b = new_node_b;
+		printf("pa\n");
 	}
 }

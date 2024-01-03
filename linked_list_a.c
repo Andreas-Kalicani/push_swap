@@ -6,13 +6,13 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 16:32:04 by andreasgjer       #+#    #+#             */
-/*   Updated: 2023/12/29 17:55:11 by akalican         ###   ########.fr       */
+/*   Updated: 2024/01/03 11:06:19 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-
+/*
 int	ft_atoi(const char *str)
 {
 	int	i;
@@ -37,7 +37,7 @@ int	ft_atoi(const char *str)
 	}
 	return (res * s);
 }
-
+*/
 t_stack_node_a	*create_list(int argc, char **argv)
 {
 	int				i;
@@ -87,7 +87,7 @@ t_stack_node_a	*add_new_node_a(t_stack_node_a *stack_a, int val)
 	return (new_node);
 }
 
-int	stack_size(t_stack_node_a *stack_a)
+int	stack_size_a(t_stack_node_a *stack_a)
 {
 	int	index;
 

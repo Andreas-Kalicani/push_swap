@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
+/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 17:30:33 by akalican          #+#    #+#             */
-/*   Updated: 2024/01/01 13:24:14 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/01/03 11:08:16 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-/*
+
 int	ft_atoi(const char *str)
 {
 	int	i;
@@ -38,7 +38,7 @@ int	ft_atoi(const char *str)
 	}
 	return (res * s);
 }
-*/
+
 
 void	print_stack_a(t_stack_node_a *head)
 {
@@ -64,4 +64,32 @@ void	print_stack_b(t_stack_node_b *head)
 		current_node = current_node->next;
 	}
 	printf("\n");
+}
+
+int	ft_isdigit(int c)
+{
+	while (c)
+	{
+		if (c >= 48 && c <= 57)
+		{
+			return (1);
+		}
+		else
+		{
+			return (0);
+		}
+	}
+	return (0);
+}
+
+size_t	ft_strlen(const char *s)
+{
+	int	i;
+
+	i = 0;
+	while (s[i])
+	{
+		i++;
+	}
+	return (i);
 }
