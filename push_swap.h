@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:06:07 by akalican          #+#    #+#             */
-/*   Updated: 2024/01/03 13:25:19 by akalican         ###   ########.fr       */
+/*   Updated: 2024/01/04 09:52:24 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int						ft_isdigit(int c);
 size_t					ft_strlen(const char *s);
 
 /*utils_2.c*/
-long    				ft_atol(const char *npoint);
+long					ft_atol(const char *npoint);
 void					ft_putstr_fd(char *s, int fd);
 
 /*push_a_to_b*/
@@ -84,30 +84,32 @@ void					swap_push(t_stack_node_a *stack_a,
 							t_stack_node_b *stack_b);
 
 /*rotate.c*/
-void    				rotate_a(t_stack_node_a **head_a, int print);
-void    				rotate_b(t_stack_node_b **head_b, int print);
-void    				rotate(t_stack_node_a **stack_a, t_stack_node_b **stack_b);
+void					rotate_a(t_stack_node_a **head_a, int print);
+void					rotate_b(t_stack_node_b **head_b, int print);
+void					rotate(t_stack_node_a **stack_a,
+							t_stack_node_b **stack_b);
 
 /*void    rev_rotate.c  */
-void    				rev_rotate_a(t_stack_node_a **bottom_a);
-void    				rev_rotate_b(t_stack_node_b **bottom_b);
-void    				rev_rotate(t_stack_node_a **stack_a, t_stack_node_b **stack_b);
+void					rev_rotate_a(t_stack_node_a **bottom_a);
+void					rev_rotate_b(t_stack_node_b **bottom_b);
+void					rev_rotate(t_stack_node_a **stack_a,
+							t_stack_node_b **stack_b);
 
 /* check_max_min_a.c */
-void 					check_min_a(t_stack_node_a *stack_a);
-void 					check_max_a(t_stack_node_a *stack_a);
-void    				check_max_min_a(t_stack_node_a *stack_a);
+void					check_min_a(t_stack_node_a *stack_a);
+void					check_max_a(t_stack_node_a *stack_a);
+void					check_max_min_a(t_stack_node_a *stack_a);
 
 /* check_max_min_b.c */
-void     				check_max_min_b(t_stack_node_b *stack_b);
-void 					check_min_b(t_stack_node_b *stack_b);
-void 					check_max_b(t_stack_node_b *stack_b);
+void					check_max_min_b(t_stack_node_b *stack_b);
+void					check_min_b(t_stack_node_b *stack_b);
+void					check_max_b(t_stack_node_b *stack_b);
 
 /*input_error.c*/
-void    				print_error_exit(void);
-void    				check_size_int(int argc, char **argv);
-void    				check_for_doubles(t_stack_node_a *stack_a);
-void    				check_int(int argc, char **argv);
-void    				input_error(int argc, char **argv);
+void					print_error_exit(void);
+void					check_size_int(int argc, char **argv);
+void					check_for_doubles(t_stack_node_a *stack_a);
+void					check_int(int argc, char **argv);
+void					input_error(int argc, char **argv);
 
 #endif
