@@ -6,7 +6,7 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:15:50 by akalican          #+#    #+#             */
-/*   Updated: 2024/01/03 11:42:44 by akalican         ###   ########.fr       */
+/*   Updated: 2024/01/29 10:08:26 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,6 @@ int	main(void)
 	print_stack_a(stack_a);
 	print_stack_b(stack_b);
 	printf("%ld", ft_atol("1234"));
+	stack_a->cheapest = false;
+	stack_a->push_cost = 0;
 }

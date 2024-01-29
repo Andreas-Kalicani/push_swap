@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
+/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 11:45:05 by akalican          #+#    #+#             */
-/*   Updated: 2024/01/04 09:52:06 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/01/29 10:11:14 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void	check_int(int argc, char **argv)
 	int	i;
 	int	j;
 
-	i = i;
+	i = 0;
 	while (i < argc)
 	{
 		j = 0;

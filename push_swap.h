@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
+/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:06:07 by akalican          #+#    #+#             */
-/*   Updated: 2024/01/04 09:52:24 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/01/29 10:17:27 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,21 @@ typedef struct b_stack_node
 	struct b_stack_node	*prev;
 
 }						t_stack_node_b;
+
+typedef struct t_move_stack
+{
+	int sa;
+	int sb;
+	int ss;
+	int pa;
+	int pb;
+	int rr;
+	int ra;
+	int rb;
+	int rra;
+	int rrb;
+}						t_move;
+
 
 /*linked_list_a*/
 
@@ -112,4 +127,5 @@ void					check_for_doubles(t_stack_node_a *stack_a);
 void					check_int(int argc, char **argv);
 void					input_error(int argc, char **argv);
 
+/* check_cheapes.c */
 #endif
