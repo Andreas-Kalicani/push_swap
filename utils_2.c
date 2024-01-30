@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   utils_2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
+/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 11:22:52 by akalican          #+#    #+#             */
-/*   Updated: 2024/01/04 09:52:59 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/01/30 18:47:26 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
+#include <stdio.h>
 long	ft_atol(const char *npoint)
 {
 	long				i;
@@ -50,3 +50,31 @@ void	ft_putstr_fd(char *s, int fd)
 		i++;
 	}
 }
+
+void	get_top_stack_a(t_stacks *stacks, t_stack_node_a *head_a, int i)
+{ 
+	int	size;
+
+	stacks->moves->pb = 1;
+	stacks->moves->ra = 0;
+	stacks->moves->rra = 0;
+	if (stacks->head_a->nbr == head_a->nbr)
+		return ;
+	size = stack_size_a(stacks->head_a);
+	if (size % 2 == 0)
+	{
+		if (i + 1 > size / 2)
+			stacks->moves->rra = (size - i);
+		else
+			stacks->moves->ra = i;
+	}
+	else
+	{
+		if (i > size / 2)
+			stacks->moves->rra = (size - i);
+		else
+			stacks->moves->ra = i;
+	}
+
+	printf("pb: %d, ra: %d, rra: %d\n", stacks->moves->pb, stacks->moves->ra, stacks->moves->rra);
+} 

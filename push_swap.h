@@ -6,7 +6,7 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:06:07 by akalican          #+#    #+#             */
-/*   Updated: 2024/01/29 10:17:27 by akalican         ###   ########.fr       */
+/*   Updated: 2024/01/30 18:25:46 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,17 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef struct s_stack_node
+typedef struct t_stacks
+{
+	struct t_stack_node_a	*head_a;
+	struct t_stack_node_b	*head_b;
+	struct t_move			*moves;
+	struct t_cheap			*cheap;
+}						t_stacks;
+
+
+
+typedef struct t_stack_node_a
 
 {
 	int					nbr;
@@ -26,8 +36,8 @@ typedef struct s_stack_node
 	int					push_cost;
 	bool				above_median;
 	bool				cheapest;
-	struct s_stack_node	*next;
-	struct s_stack_node	*prev;
+	struct t_stack_node_a	*next;
+	struct s_stack_node_a	*prev;
 
 }						t_stack_node_a;
 
@@ -44,8 +54,9 @@ typedef struct b_stack_node
 
 }						t_stack_node_b;
 
-typedef struct t_move_stack
+typedef struct t_move
 {
+	int	cost;
 	int sa;
 	int sb;
 	int ss;
@@ -58,6 +69,21 @@ typedef struct t_move_stack
 	int rrb;
 }						t_move;
 
+typedef struct t_cheap
+{
+	int					cost;
+	int					sa;
+	int					sb;
+	int					ss;
+	int					pa;
+	int					pb;
+	int					ra;
+	int					rb;
+	int					rr;
+	int					rra;
+	int					rrb;
+	int					rrr;
+}						t_cheap;
 
 /*linked_list_a*/
 
@@ -83,6 +109,7 @@ size_t					ft_strlen(const char *s);
 /*utils_2.c*/
 long					ft_atol(const char *npoint);
 void					ft_putstr_fd(char *s, int fd);
+void					get_top_stack_a(t_stacks *stacks, t_stack_node_a *head_a, int i);
 
 /*push_a_to_b*/
 void					push_a_to_b(t_stack_node_a **stack_a,

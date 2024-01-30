@@ -6,7 +6,7 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:15:50 by akalican          #+#    #+#             */
-/*   Updated: 2024/01/29 10:08:26 by akalican         ###   ########.fr       */
+/*   Updated: 2024/01/30 18:40:05 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main(void)
 {
 	t_stack_node_a	*stack_a;
 	t_stack_node_b	*stack_b;
+	t_stacks		*stack;
 
 	stack_a = create_stack_a(6);
 	stack_a = add_new_node_a(stack_a, 5);
@@ -56,4 +57,5 @@ int	main(void)
 	printf("%ld", ft_atol("1234"));
 	stack_a->cheapest = false;
 	stack_a->push_cost = 0;
+	get_top_stack_a(stack_a, 1);
 }
