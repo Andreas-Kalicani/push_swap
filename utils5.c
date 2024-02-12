@@ -6,7 +6,7 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 15:14:24 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/12 16:33:15 by akalican         ###   ########.fr       */
+/*   Updated: 2024/02/12 18:33:07 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,4 +75,29 @@ t_stack_node_a *ft_sub_process(char **argv)
         i++;
     }
     
+}
+
+
+t_stack_node_a	*ft_process(int argc, char **argv)
+{
+	t_stack_node_a *stack_a;
+	int				i;
+	int				j;
+
+	i = 1;
+	stack_a = NULL;
+	if (argc < 2)
+		print_error_exit();
+	if (argc == 2)
+		stack_a = ft_sub_process(argv);
+	else
+	{
+			while (i < argc)
+			{
+				j = ft_atoi2(argv[i]);
+				ft_add_back_a(&stack_a, create_stack_a(j));
+				i++;
+			}
+	}
+	return (stack_a);
 }

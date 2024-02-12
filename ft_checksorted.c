@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_node_back.c                                 :+:      :+:    :+:   */
+/*   ft_checksorted.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 15:45:05 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/12 18:42:07 by akalican         ###   ########.fr       */
+/*   Created: 2024/02/12 18:37:13 by akalican          #+#    #+#             */
+/*   Updated: 2024/02/12 18:40:46 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_add_back_a(t_stack_node_a **stack_a, int val)
+int ft_checksorted(t_stack_node_a *stack_a)
 {
-	if (!stack_a)
-		return ;
-	if (!*stack_a)
-		*stack_a = val;
-	else
-		(ft_lstlast_a(*stack_a))->next = val;
-}
+    int i;
 
-void    ft_add_back_b(t_stack_node_b **stack_b, int val)
-{
-    if (!stack_b)
-		return (0);
-	if (!*stack_b)
-		*stack_b = val;
-	else
-		(ft_lstlast_b(*stack_b))->next = val;
-}
+    i = stack_a->nbr;
+    while (stack_a)
+    {
+        if (i > stack_a->nbr)
+            return (0);
+        i = stack_a->nbr;
+        stack_a = stack_a->nbr;
+    }
+    return (1);}

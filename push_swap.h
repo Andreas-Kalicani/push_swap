@@ -6,7 +6,7 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:06:07 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/12 16:20:54 by akalican         ###   ########.fr       */
+/*   Updated: 2024/02/12 18:40:19 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,6 +186,12 @@ static char				*word_dup(const char *str, int start, int finish);
 char					**ft_split(char const *s, char c);
 
 /* ft_add_node_back.c */
-void    ft_add_back_b(t_stack_node_b **stack_b, int val);
-void	ft_add_back_a(t_stack_node_a **stack_a, int val);
+void    				ft_add_back_b(t_stack_node_b **stack_b, int val);
+void 					ft_add_back_a(t_stack_node_a **stack_a, int val);
+
+/*void	ft_parse_arg */
+void					ft_freestr(char **lst);
+
+/* ft_checkedsorted.c */
+int 					ft_checksorted(t_stack_node_a *stack_a);
 #endif

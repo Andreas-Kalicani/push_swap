@@ -1,33 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_add_node_back.c                                 :+:      :+:    :+:   */
+/*   ft_parse_arg.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/12 15:45:05 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/12 18:42:07 by akalican         ###   ########.fr       */
+/*   Created: 2024/02/12 18:26:05 by akalican          #+#    #+#             */
+/*   Updated: 2024/02/12 18:26:23 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_add_back_a(t_stack_node_a **stack_a, int val)
+void	ft_freestr(char **lst)
 {
-	if (!stack_a)
-		return ;
-	if (!*stack_a)
-		*stack_a = val;
-	else
-		(ft_lstlast_a(*stack_a))->next = val;
-}
+	char	*n1;
 
-void    ft_add_back_b(t_stack_node_b **stack_b, int val)
-{
-    if (!stack_b)
-		return (0);
-	if (!*stack_b)
-		*stack_b = val;
-	else
-		(ft_lstlast_b(*stack_b))->next = val;
+	if (!lst)
+		return ;
+	while (*lst)
+	{
+		n1 = *lst;
+		lst++;
+		free(n1);
+	}
+	*lst = NULL;
 }
