@@ -6,7 +6,7 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 11:22:52 by akalican          #+#    #+#             */
-/*   Updated: 2024/01/30 18:47:26 by akalican         ###   ########.fr       */
+/*   Updated: 2024/02/12 14:22:28 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	ft_putstr_fd(char *s, int fd)
 	}
 }
 
+/*
 void	get_top_stack_a(t_stacks *stacks, t_stack_node_a *head_a, int i)
 { 
 	int	size;
@@ -78,3 +79,4 @@ void	get_top_stack_a(t_stacks *stacks, t_stack_node_a *head_a, int i)
 
 	printf("pb: %d, ra: %d, rra: %d\n", stacks->moves->pb, stacks->moves->ra, stacks->moves->rra);
 } 
+*/

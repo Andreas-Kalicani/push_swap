@@ -6,7 +6,7 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:06:07 by akalican          #+#    #+#             */
-/*   Updated: 2024/01/30 18:25:46 by akalican         ###   ########.fr       */
+/*   Updated: 2024/02/12 16:20:54 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct t_stacks
 
 
 
-typedef struct t_stack_node_a
+typedef struct s_stack_node_a
 
 {
 	int					nbr;
@@ -36,12 +36,12 @@ typedef struct t_stack_node_a
 	int					push_cost;
 	bool				above_median;
 	bool				cheapest;
-	struct t_stack_node_a	*next;
+	struct s_stack_node_a	*next;
 	struct s_stack_node_a	*prev;
 
 }						t_stack_node_a;
 
-typedef struct b_stack_node
+typedef struct s_stack_node
 
 {
 	int					nbr;
@@ -49,12 +49,21 @@ typedef struct b_stack_node
 	int					push_cost;
 	bool				above_median;
 	bool				cheapest;
-	struct b_stack_node	*next;
-	struct b_stack_node	*prev;
+	struct s_stack_node	*next;
+	struct s_stack_node	*prev;
 
 }						t_stack_node_b;
 
-typedef struct t_move
+
+typedef struct s_values
+{
+	int					max_a;
+	int					min_a;
+	int					max_b;
+	int					min_b;
+}						t_values;
+
+typedef struct s_move
 {
 	int	cost;
 	int sa;
@@ -69,7 +78,7 @@ typedef struct t_move
 	int rrb;
 }						t_move;
 
-typedef struct t_cheap
+typedef struct s_cheap
 {
 	int					cost;
 	int					sa;
@@ -141,11 +150,15 @@ void					rev_rotate(t_stack_node_a **stack_a,
 void					check_min_a(t_stack_node_a *stack_a);
 void					check_max_a(t_stack_node_a *stack_a);
 void					check_max_min_a(t_stack_node_a *stack_a);
+int 					check_max_a_nbr(t_stack_node_a *stack_a);
+int 					check_min_a_nbr(t_stack_node_a *stack_a);
 
 /* check_max_min_b.c */
 void					check_max_min_b(t_stack_node_b *stack_b);
 void					check_min_b(t_stack_node_b *stack_b);
 void					check_max_b(t_stack_node_b *stack_b);
+int 					check_max_b_nbr(t_stack_node_b *stack_b);
+int 					check_min_b_nbr(t_stack_node_b *stack_b);
 
 /*input_error.c*/
 void					print_error_exit(void);
@@ -154,5 +167,25 @@ void					check_for_doubles(t_stack_node_a *stack_a);
 void					check_int(int argc, char **argv);
 void					input_error(int argc, char **argv);
 
-/* check_cheapes.c */
+/* utils3.c */
+t_stack_node_a			*ft_lstlast_a(t_stack_node_a *lst);
+t_stack_node_b			*ft_lstlast_b(t_stack_node_b *lst);
+int						ft_find_place_a(t_stack_node_a *head_a, int push_of_nbr);
+int 					ft_find_place_b(t_stack_node_b *head_b, int nbr_of_push);
+/* utils4.c*/
+int						ft_find_index_a(t_stack_node_a *stack_a, int nbr);
+int 					ft_find_index_b(t_stack_node_b *stack_b, int nbr);
+
+/* utils5.c */
+int						ft_isdigit(int c);
+int 					ft_atoi2(const char *str);
+
+/* split.c */
+static int				count_words(const char *str, char c);
+static char				*word_dup(const char *str, int start, int finish);
+char					**ft_split(char const *s, char c);
+
+/* ft_add_node_back.c */
+void    ft_add_back_b(t_stack_node_b **stack_b, int val);
+void	ft_add_back_a(t_stack_node_a **stack_a, int val);
 #endif

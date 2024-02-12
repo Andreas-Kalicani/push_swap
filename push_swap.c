@@ -6,7 +6,7 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:15:50 by akalican          #+#    #+#             */
-/*   Updated: 2024/01/30 18:40:05 by akalican         ###   ########.fr       */
+/*   Updated: 2024/02/12 14:40:35 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,8 +54,9 @@ int	main(void)
 	rev_rotate(&stack_a, &stack_b);
 	print_stack_a(stack_a);
 	print_stack_b(stack_b);
-	printf("%ld", ft_atol("1234"));
+	printf("%ld \n", ft_atol("1234"));
 	stack_a->cheapest = false;
 	stack_a->push_cost = 0;
-	get_top_stack_a(stack_a, 1);
+	printf("%d \n", ft_find_place_b(stack_b, 0));
+	printf("%d", ft_find_place_a(stack_a, 3));
 }
