@@ -6,7 +6,7 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:06:07 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/12 18:40:19 by akalican         ###   ########.fr       */
+/*   Updated: 2024/02/13 14:56:48 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,7 +177,6 @@ int						ft_find_index_a(t_stack_node_a *stack_a, int nbr);
 int 					ft_find_index_b(t_stack_node_b *stack_b, int nbr);
 
 /* utils5.c */
-int						ft_isdigit(int c);
 int 					ft_atoi2(const char *str);
 
 /* split.c */
@@ -194,4 +193,17 @@ void					ft_freestr(char **lst);
 
 /* ft_checkedsorted.c */
 int 					ft_checksorted(t_stack_node_a *stack_a);
+
+/* applyin1.c */
+int 					ft_apply_rarb(t_stack_node_a **stack_a, t_stack_node_b **stack_b, int c, char s);
+int 					ft_apply_rrarrb(t_stack_node_a **stack_a, t_stack_node_b **stack_b, int c, char s);
+int 					ft_apply_rrarb(t_stack_node_a **stack_a, t_stack_node_b **stack_b, int c, char s);
+int 					ft_apply_rarrb(t_stack_node_a **stack_a, t_stack_node_b **stack_b, int c, char s);
+
+/* solver_utils_ab.c */
+int 					ft_case_rarb(t_stack_node_a *stack_a, t_stack_node_b *stack_b, int c);
+int 					ft_case_rrarrb(t_stack_node_a *stack_a, t_stack_node_b *stack_b, int c);
+int 					ft_case_rrarb(t_stack_node_a *stack_a, t_stack_node_b *stack_b, int c);
+int 					ft_case_rarrb(t_stack_node_a *stack_a, t_stack_node_b *stack_b, int c);
+
 #endif

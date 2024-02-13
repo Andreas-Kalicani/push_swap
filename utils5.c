@@ -6,27 +6,11 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 15:14:24 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/12 18:33:07 by akalican         ###   ########.fr       */
+/*   Updated: 2024/02/13 10:14:09 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	ft_isdigit(int c)
-{
-	while (c)
-	{
-		if (c >= 48 && c <= 57)
-		{
-			return (1);
-		}
-		else
-		{
-			return (0);
-		}
-	}
-	return (0);
-}
 
 int ft_atoi2(const char *str)
 {
@@ -71,10 +55,10 @@ t_stack_node_a *ft_sub_process(char **argv)
     while (tmp[i])
     {
         j = ft_atoi2(tmp[i]);
-        ft_add_back_a(&stack_a, create_stack_a(j));
+        ft_add_back_a(&stack_a, j);
         i++;
     }
-    
+	return (stack_a);
 }
 
 
@@ -95,7 +79,7 @@ t_stack_node_a	*ft_process(int argc, char **argv)
 			while (i < argc)
 			{
 				j = ft_atoi2(argv[i]);
-				ft_add_back_a(&stack_a, create_stack_a(j));
+				ft_add_back_a(&stack_a, j);
 				i++;
 			}
 	}
