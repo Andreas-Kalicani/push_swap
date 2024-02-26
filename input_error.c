@@ -6,7 +6,7 @@
 /*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 11:45:05 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/21 12:43:30 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/02/26 14:40:50 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	print_error_exit(void)
 	exit(0);
 }
 
-void	check_for_doubles(t_stack_node_a *stack_a)
+int	check_for_doubles(t_stack_node_a *stack_a)
 {
 	t_stack_node_a	*current_node;
 	t_stack_node_a	*compare_node;
@@ -62,6 +62,7 @@ void	check_for_doubles(t_stack_node_a *stack_a)
 		}
 		current_node = current_node->next;
 	}
+	return (0);
 }
 
 void	check_int(int argc, char **argv)

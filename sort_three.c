@@ -1,27 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/08 10:15:50 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/26 14:44:55 by andreasgjer      ###   ########.fr       */
+/*   Created: 2024/02/26 13:37:52 by andreasgjer       #+#    #+#             */
+/*   Updated: 2024/02/26 13:51:38 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-int	main(int argc, char **argv)
+void	ft_sort_three(t_stack_node_a **stack_a)
 {
-	t_stack_node_a	*stack_a;
-
-	stack_a = ft_process(argc, argv);
-	if (!stack_a || check_for_doubles(stack_a))
-		print_error_exit();
-	if (!ft_checksorted(stack_a))
-		ft_sort(&stack_a);
-	return (0);
+	if (check_max_a_nbr(*stack_a) == (*stack_a)->nbr)
+	{
+		rev_rotate_a(*stack_a);
+		swap_a(*stack_a, 0);
+	}
+	else if (check_max_a_nbr(*stack_a) == (*stack_a)->nbr)
+	{
+		rotate_a(*stack_a, 0);
+		if (!ft_checksorted(*stack_a))
+			swap_a(*stack_a, 0);
+	}
+	else
+	{
+		if (ft_find_index_a(*stack_a, check_max_a_nbr(*stack_a)) == 1)
+			rev_rotate_a(stack_a);
+		else
+			swap_a(*stack_a, 0);
+	}
 }

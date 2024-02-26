@@ -6,7 +6,7 @@
 /*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:06:07 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/21 14:24:32 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/02/26 14:44:19 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -161,7 +161,7 @@ int							check_min_b_nbr(t_stack_node_b *stack_b);
 /*input_error.c*/
 void						print_error_exit(void);
 void						check_size_int(int argc, char **argv);
-void						check_for_doubles(t_stack_node_a *stack_a);
+int							check_for_doubles(t_stack_node_a *stack_a);
 void						check_int(int argc, char **argv);
 void						input_error(int argc, char **argv);
 
@@ -229,4 +229,14 @@ int							ft_rotate_type_ba(t_stack_node_a *stack_a,
 								t_stack_node_b *stack_b);
 int							ft_rotate_type_ab(t_stack_node_a *stack_a,
 								t_stack_node_b *stack_b);
+
+/*sort_three.c*/
+void						ft_sort_three(t_stack_node_a **stack_a);
+
+/*sort_big.c*/
+void						ft_sort(t_stack_node_a **stack_a);
+/*utils5.c*/
+int							ft_atoi2(const char *str);
+t_stack_node_a				*ft_sub_process(char **argv);
+t_stack_node_a				*ft_process(int argc, char **argv);
 #endif
