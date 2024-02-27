@@ -6,10 +6,9 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 11:06:08 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/27 15:45:42 by akalican         ###   ########.fr       */
+/*   Updated: 2024/02/27 16:06:30 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "push_swap.h"
 #include <stdio.h>
@@ -61,8 +60,8 @@ void	ft_putnbr_fd(int n, int fd)
 /*
 int ft_find_place_b(t_stack_node_b **head_b, int nbr_of_push)
 {
-    int i;
-    t_stack_node_b *tmp;
+	int				i;
+	t_stack_node_b	*tmp;
 
     i = 1;
 	print_stack_b(*head_b);
@@ -130,24 +129,27 @@ int ft_find_place_b(t_stack_node_b **head_b, int nbr_of_push)
 }
 int ft_find_place_a(t_stack_node_a *head_a, int push_of_nbr)
 {
-    int i = 1;
-    t_stack_node_a *tmp;
+	int				i;
+	t_stack_node_a	*tmp;
 
-    if (head_a == NULL) 
-        return (0);
-
-    if (push_of_nbr > head_a->nbr && push_of_nbr > ft_lstlast_a(head_a)->nbr)
-        i = 0;
-    else if (push_of_nbr > check_max_a_nbr(head_a) || push_of_nbr < check_min_a_nbr(head_a))
-        i = ft_find_index_a(head_a, check_min_a_nbr(head_a));
-    else {
-        tmp = head_a->next;
-        while (tmp != NULL && (head_a->nbr > push_of_nbr || tmp->nbr < push_of_nbr))
-        {
+	i = 1;
+	if (head_a == NULL)
+		return (0);
+	if (push_of_nbr > head_a->nbr && push_of_nbr > ft_lstlast_a(head_a)->nbr)
+		i = 0;
+	else if (push_of_nbr > check_max_a_nbr(head_a)
+		|| push_of_nbr < check_min_a_nbr(head_a))
+		i = ft_find_index_a(head_a, check_min_a_nbr(head_a));
+	else
+	{
+		tmp = head_a->next;
+		while (tmp != NULL && (head_a->nbr > push_of_nbr
+				|| tmp->nbr < push_of_nbr))
+		{
 			head_a = head_a->next;
 			tmp = head_a->next;
 			i++;
-        }
-    }
-    return i;
+		}
+	}
+	return (i);
 }
