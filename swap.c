@@ -6,7 +6,7 @@
 /*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 12:11:08 by andreasgjer       #+#    #+#             */
-/*   Updated: 2024/01/01 12:51:26 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/02/26 17:22:07 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	swap_push(t_stack_node_a *stack_a, t_stack_node_b *stack_b)
 		swap_a(stack_a, 0);
 		swap_b(stack_b, 0);
 
-		printf("ss/n");
+		printf("ss\n");
 	}
 }
 

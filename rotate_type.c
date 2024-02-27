@@ -6,7 +6,7 @@
 /*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 13:25:31 by andreasgjer       #+#    #+#             */
-/*   Updated: 2024/02/21 14:02:26 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/02/26 16:37:40 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_rotate_type_ba(t_stack_node_a *stack_a, t_stack_node_b *stack_b)
 		if (i > ft_case_rarb_a(stack_a, stack_b, tmp->nbr))
 			i = ft_case_rarb_a(stack_a, stack_b, tmp->nbr);
 		if (i > ft_case_rrarrb_a(stack_a, stack_b, tmp->nbr))
-			i = ft_case_rrarrba_a(stack_a, stack_b, tmp->nbr);
+			i = ft_case_rrarrb_a(stack_a, stack_b, tmp->nbr);
 		if (i > ft_case_rarrb_a(stack_a, stack_b, tmp->nbr))
 			i = ft_case_rarrb_a(stack_a, stack_b, tmp->nbr);
 		if (i > ft_case_rrarb_a(stack_a, stack_b, tmp->nbr))
@@ -44,7 +44,7 @@ int	ft_rotate_type_ab(t_stack_node_a *stack_a, t_stack_node_b *stack_b)
 	while (tmp)
 	{
 		if (i > ft_case_rarb(stack_a, stack_b, tmp->nbr))
-			i = ft_case_rarb(stack_a, tmp->next, tmp->nbr);
+			i = ft_case_rarb(stack_a, stack_b, tmp->nbr);
 		if (i > ft_case_rrarrb(stack_a, stack_b, tmp->nbr))
 			i = ft_case_rrarrb(stack_a, stack_b, tmp->nbr);
 		if (i > ft_case_rarrb(stack_a, stack_b, tmp->nbr))

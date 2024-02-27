@@ -6,7 +6,7 @@
 /*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 15:39:51 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/20 18:10:33 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/02/26 16:38:11 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int ft_case_rrarb_a(t_stack_node_a *stack_a, t_stack_node_b *stack_b, int c)
 
 	i = 0;
 	if (ft_find_place_a(stack_a, c))
-		i = stack_size(stack_a) - ft_find_index_a(stack_a, c);
+		i = stack_size_a(stack_a) - ft_find_index_a(stack_a, c);
 	i = ft_find_index_b(stack_b, c) + i;
 	return (i);
 }

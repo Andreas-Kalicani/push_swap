@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_free.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/08 10:15:50 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/26 18:20:42 by andreasgjer      ###   ########.fr       */
+/*   Created: 2024/02/26 16:58:26 by andreasgjer       #+#    #+#             */
+/*   Updated: 2024/02/26 17:03:39 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-int	main(int argc, char **argv)
+void	ft_free(t_stack_node_a **stack_a)
 {
-	t_stack_node_a	*stack_a;
+	t_stack_node_a	*tmp;
 
-	stack_a = ft_process(argc, argv);
-	if (!stack_a || check_for_doubles(stack_a))
+	if (!stack_a)
+		return ;
+	while (*stack_a)
 	{
-		ft_free(&stack_a);
-		print_error_exit();
+		tmp = (*stack_a)->next;
+		(*stack_a)->nbr = 0;
+		free(*stack_a);
+		*stack_a = tmp;
 	}
-	if (!ft_checksorted(stack_a))
-		ft_sort(&stack_a);
-	ft_free(&stack_a);
-	printf("ok");
-	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:06:07 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/26 14:44:19 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/02/26 18:21:57 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -235,8 +235,12 @@ void						ft_sort_three(t_stack_node_a **stack_a);
 
 /*sort_big.c*/
 void						ft_sort(t_stack_node_a **stack_a);
+
 /*utils5.c*/
 int							ft_atoi2(const char *str);
 t_stack_node_a				*ft_sub_process(char **argv);
 t_stack_node_a				*ft_process(int argc, char **argv);
+
+/*ft_free.c*/
+void						ft_free(t_stack_node_a **stack_a);
 #endif

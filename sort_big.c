@@ -6,7 +6,7 @@
 /*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 12:48:44 by andreasgjer       #+#    #+#             */
-/*   Updated: 2024/02/26 14:32:15 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/02/26 16:38:58 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ void	ft_sort_b_till_3(t_stack_node_a **stack_a, t_stack_node_b **stack_b)
 			else if (i == ft_case_rrarrb(*stack_a, *stack_b, tmp->nbr))
 				i = ft_apply_rrarrb(stack_a, stack_b, tmp->nbr, 'a');
 			else if (i == ft_case_rarrb(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rarrb(stack_a, *stack_b, tmp->nbr, 'a');
+				i = ft_apply_rarrb(stack_a, stack_b, tmp->nbr, 'a');
 			else if (i == ft_case_rrarb(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rrarb(stack_a, *stack_b, tmp->nbr, 'a');
+				i = ft_apply_rrarb(stack_a, stack_b, tmp->nbr, 'a');
 			else
 				tmp = tmp->next;
 		}
