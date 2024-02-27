@@ -6,7 +6,7 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 17:30:33 by akalican          #+#    #+#             */
-/*   Updated: 2024/01/03 11:08:16 by akalican         ###   ########.fr       */
+/*   Updated: 2024/02/27 15:18:38 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,24 +40,24 @@ int	ft_atoi(const char *str)
 }
 
 
-void	print_stack_a(t_stack_node_a *head)
+void print_stack_a(t_stack_node_a *head)
 {
-	t_stack_node_a	*current_node;
+    t_stack_node_a *current_node = head;
 
-	current_node = head;
-	while (current_node != NULL)
-	{
-		printf("%d ", current_node->nbr);
-		current_node = current_node->next;
-	}
-	printf("\n");
+    while (current_node != NULL)
+    {
+        printf("%d ", current_node->nbr);
+        current_node = current_node->next;
+    }
+    printf("\n");
 }
 
-void	print_stack_b(t_stack_node_b *head)
+
+void	print_stack_b(t_stack_node_b **head)
 {
 	t_stack_node_b	*current_node;
 
-	current_node = head;
+	current_node = *head;
 	while (current_node != NULL)
 	{
 		printf("%d ", current_node->nbr);

@@ -1,35 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_add_back_a.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/08 10:15:50 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/27 11:30:40 by akalican         ###   ########.fr       */
+/*   Created: 2024/02/27 07:55:23 by akalican          #+#    #+#             */
+/*   Updated: 2024/02/27 07:57:53 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-int	main(int argc, char **argv)
+void	ft_add_back(t_stack_node_a **stack, t_stack_node_a *stack_new)
 {
-	t_stack_node_a	*stack_a;
-	
-	stack_a = ft_process(argc, argv);
-	printf("%p", ft_process(argc, argv));
-	printf("\n");
-	if (!stack_a || check_for_doubles(stack_a))
-	{
-		print_error_exit();
-	}
-	if (!ft_checksorted(stack_a))
-	{
-		ft_putstr_fd("suuu",1);
-		ft_sort(&stack_a);
-	}
-	printf("ok");
-	return (0);
+	if (!stack)
+		return ;
+	if (!*stack)
+		*stack = stack_new;
+	else
+		(ft_lstlast_a(*stack))->next = stack_new;
 }

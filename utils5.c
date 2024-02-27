@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils5.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
+/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 15:14:24 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/20 17:44:18 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/02/27 08:10:42 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,15 @@ t_stack_node_a	*ft_sub_process(char **argv)
 
 	stack_a = NULL;
 	i = 0;
-	tmp = ft_split(argv[i], 32);
+	tmp = ft_split(argv[1], 32);
 	while (tmp[i])
 	{
 		j = ft_atoi2(tmp[i]);
-		ft_add_back_a(&stack_a, j);
+		ft_add_back(&stack_a, ft_stack_new(j));
 		i++;
 	}
+	ft_freestr(tmp);
+	free(tmp);
 	return (stack_a);
 }
 
@@ -77,7 +79,7 @@ t_stack_node_a	*ft_process(int argc, char **argv)
 		while (i < argc)
 		{
 			j = ft_atoi2(argv[i]);
-			ft_add_back_a(&stack_a, j);
+			ft_add_back(&stack_a, ft_stack_new(j));
 			i++;
 		}
 	}

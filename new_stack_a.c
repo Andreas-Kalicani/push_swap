@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   new_stack_a.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/12/08 10:15:50 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/27 11:30:40 by akalican         ###   ########.fr       */
+/*   Created: 2024/02/27 07:51:29 by akalican          #+#    #+#             */
+/*   Updated: 2024/02/27 07:53:30 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-#include <stdlib.h>
 
-int	main(int argc, char **argv)
+// Creates new stack node with given number.
+t_stack_node_a	*ft_stack_new(int content)
 {
-	t_stack_node_a	*stack_a;
-	
-	stack_a = ft_process(argc, argv);
-	printf("%p", ft_process(argc, argv));
-	printf("\n");
-	if (!stack_a || check_for_doubles(stack_a))
-	{
+	t_stack_node_a	*new;
+
+	new = malloc(sizeof (t_stack_node_a));
+	if (!new)
 		print_error_exit();
-	}
-	if (!ft_checksorted(stack_a))
-	{
-		ft_putstr_fd("suuu",1);
-		ft_sort(&stack_a);
-	}
-	printf("ok");
-	return (0);
+	new->nbr = content;
+	new->next = NULL;
+	return (new);
 }

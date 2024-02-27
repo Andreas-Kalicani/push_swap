@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
+/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:06:07 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/21 14:24:32 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/02/27 14:40:13 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,16 @@ typedef struct s_stack_node_a
 
 }							t_stack_node_a;
 
-typedef struct s_stack_node
-
+typedef struct s_stack_node_b
 {
-	int						nbr;
-	int						index;
-	int						push_cost;
-	bool					above_median;
-	bool					cheapest;
-	struct s_stack_node		*next;
-	struct s_stack_node		*prev;
-
-}							t_stack_node_b;
+    int nbr;
+    int index;
+    int push_cost;
+    bool above_median;
+    bool cheapest;
+    struct s_stack_node_b *next;
+    struct s_stack_node_b *prev;
+} t_stack_node_b;
 
 typedef struct s_values
 {
@@ -108,7 +106,7 @@ int							stack_size_b(t_stack_node_b *stack_b);
 /*utils*/
 int							ft_atoi(const char *str);
 void						print_stack_a(t_stack_node_a *head);
-void						print_stack_b(t_stack_node_b *head);
+void						print_stack_b(t_stack_node_b **head);
 int							ft_isdigit(int c);
 size_t						ft_strlen(const char *s);
 
@@ -155,13 +153,13 @@ int							check_min_a_nbr(t_stack_node_a *stack_a);
 void						check_max_min_b(t_stack_node_b *stack_b);
 void						check_min_b(t_stack_node_b *stack_b);
 void						check_max_b(t_stack_node_b *stack_b);
-int							check_max_b_nbr(t_stack_node_b *stack_b);
+int							check_max_b_nbr(t_stack_node_b **stack_b);
 int							check_min_b_nbr(t_stack_node_b *stack_b);
 
 /*input_error.c*/
 void						print_error_exit(void);
 void						check_size_int(int argc, char **argv);
-void						check_for_doubles(t_stack_node_a *stack_a);
+int							check_for_doubles(t_stack_node_a *stack_a);
 void						check_int(int argc, char **argv);
 void						input_error(int argc, char **argv);
 
@@ -170,11 +168,11 @@ t_stack_node_a				*ft_lstlast_a(t_stack_node_a *lst);
 t_stack_node_b				*ft_lstlast_b(t_stack_node_b *lst);
 int							ft_find_place_a(t_stack_node_a *head_a,
 								int push_of_nbr);
-int							ft_find_place_b(t_stack_node_b *head_b,
+int							ft_find_place_b(t_stack_node_b **head_b,
 								int nbr_of_push);
 /* utils4.c*/
 int							ft_find_index_a(t_stack_node_a *stack_a, int nbr);
-int							ft_find_index_b(t_stack_node_b *stack_b, int nbr);
+int							ft_find_index_b(t_stack_node_b **stack_b, int nbr);
 
 /* utils5.c */
 int							ft_atoi2(const char *str);
@@ -229,4 +227,24 @@ int							ft_rotate_type_ba(t_stack_node_a *stack_a,
 								t_stack_node_b *stack_b);
 int							ft_rotate_type_ab(t_stack_node_a *stack_a,
 								t_stack_node_b *stack_b);
+
+/*sort_three.c*/
+void						ft_sort_three(t_stack_node_a **stack_a);
+
+/*sort_big*/
+void						ft_sort_b_till_3(t_stack_node_a **stack_a, t_stack_node_b **stack_b);
+t_stack_node_b				*ft_sort_b(t_stack_node_a **stack_a);
+t_stack_node_a				**ft_sort_a(t_stack_node_a **stack_a, t_stack_node_b **stack_b);
+void						ft_sort(t_stack_node_a **stack_a);
+
+/*utils5.c*/
+int							ft_atoi2(const char *str);
+t_stack_node_a				*ft_sub_process(char **argv);
+t_stack_node_a				*ft_process(int argc, char **argv);
+
+t_stack_node_a				*ft_stack_new(int content);
+
+void						ft_add_back(t_stack_node_a **stack, t_stack_node_a *stack_new);
+void						ft_putchar_fd(char c, int fd);
+void						ft_putnbr_fd(int n, int fd);
 #endif

@@ -6,7 +6,7 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 16:32:04 by andreasgjer       #+#    #+#             */
-/*   Updated: 2024/01/03 11:06:19 by akalican         ###   ########.fr       */
+/*   Updated: 2024/02/27 15:11:55 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,14 +89,17 @@ t_stack_node_a	*add_new_node_a(t_stack_node_a *stack_a, int val)
 
 int	stack_size_a(t_stack_node_a *stack_a)
 {
-	int	index;
+	ft_putstr_fd("herethere\n", 1);
+	size_t	index;
 
 	index = 0;
 	while (stack_a)
 	{
-		index++;
+		
 		stack_a = stack_a->next;
+		index++;
 	}
+	ft_putstr_fd("herethere\n", 1);
 	return (index);
 }
 
