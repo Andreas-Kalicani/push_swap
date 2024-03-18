@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:15:50 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/27 16:05:48 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/05 22:54:17 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,20 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack_node_a	*stack_a;
-	
+	t_stacks	*stack_a;
+
 	stack_a = ft_process(argc, argv);
 	printf("%p", ft_process(argc, argv));
 	printf("\n");
-	if (!stack_a || check_for_doubles(stack_a))
+	if (!stack_a || ft_checkdup(stack_a))
 	{
 		print_error_exit();
 	}
 	if (!ft_checksorted(stack_a))
 	{
-		ft_putstr_fd("suuu",1);
 		ft_sort(&stack_a);
 	}
 	printf("ok");
+	print_stack_a(stack_a);
 	return (0);
 }

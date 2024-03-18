@@ -6,15 +6,15 @@
 /*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 16:58:26 by andreasgjer       #+#    #+#             */
-/*   Updated: 2024/02/26 17:03:39 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/03/05 16:08:25 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free(t_stack_node_a **stack_a)
+void	ft_free(t_stacks **stack_a)
 {
-	t_stack_node_a	*tmp;
+	t_stacks	*tmp;
 
 	if (!stack_a)
 		return ;

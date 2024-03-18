@@ -6,84 +6,51 @@
 /*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 09:21:26 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/26 17:11:08 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/03/05 14:50:01 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	check_max_min_a(t_stack_node_a *head_a)
+int	ft_lstsize(t_stacks *lst)
 {
-	check_max_a(head_a);
-	check_min_a(head_a);
+	size_t	i;
+
+	i = 0;
+	while (lst)
+	{
+		lst = lst->next;
+		i++;
+	}
+	return (i);
 }
 
-void	check_min_a(t_stack_node_a *stack_a)
-{
-	int	min_value;
 
-	if (stack_a == NULL)
-		return ;
-	min_value = stack_a->nbr;
-	while (stack_a != NULL)
+int	check_min(t_stacks *stack)
+{
+	int		i;
+
+	i = stack->nbr;
+	while (stack)
 	{
-		if (stack_a->nbr < min_value)
-		{
-			min_value = stack_a->nbr;
-		}
-		stack_a = stack_a->next;
+		if (stack->nbr < i)
+			i = stack->nbr;
+		stack = stack->next;
 	}
+	return (i);
 }
 
-void	check_max_a(t_stack_node_a *stack_a)
+
+int	check_max(t_stacks *stack)
 {
-	int	max_value;
+	int		i;
 
-	if (stack_a == NULL)
-		return ;
-	max_value = stack_a->nbr;
-	while (stack_a != NULL)
+	i = stack->nbr;
+	while (stack)
 	{
-		if (stack_a->nbr > max_value)
-		{
-			max_value = stack_a->nbr;
-		}
-		stack_a = stack_a->next;
+		if (stack->nbr > i)
+			i = stack->nbr;
+		stack = stack->next;
 	}
-}
-
-int	check_max_a_nbr(t_stack_node_a *stack_a)
-{
-	int	max_value;
-
-	if (stack_a == NULL)
-		return (0);
-	max_value = stack_a->nbr;
-	while (stack_a != NULL)
-	{
-		if (stack_a->nbr > max_value)
-		{
-			max_value = stack_a->nbr;
-		}
-		stack_a = stack_a->next;
-	}
-	return (max_value);
-}
-
-int	check_min_a_nbr(t_stack_node_a *stack_a)
-{
-	int	min_value;
-
-	if (stack_a == NULL)
-		return (0);
-	min_value = stack_a->nbr;
-	while (stack_a != NULL)
-	{
-		if (stack_a->nbr < min_value)
-		{
-			min_value = stack_a->nbr;
-		}
-		stack_a = stack_a->next;
-	}
-	return (min_value);
+	return (i);
 }

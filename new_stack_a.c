@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   new_stack_a.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 07:51:29 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/27 07:53:30 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:07:00 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 // Creates new stack node with given number.
-t_stack_node_a	*ft_stack_new(int content)
+t_stacks	*ft_stack_new(int content)
 {
-	t_stack_node_a	*new;
+	t_stacks	*new;
 
-	new = malloc(sizeof (t_stack_node_a));
+	new = malloc(sizeof (t_stacks));
 	if (!new)
 		print_error_exit();
 	new->nbr = content;

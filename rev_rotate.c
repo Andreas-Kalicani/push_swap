@@ -6,62 +6,106 @@
 /*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:42:46 by akalican          #+#    #+#             */
-/*   Updated: 2024/01/04 09:52:33 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/03/05 20:19:57 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-void	rev_rotate(t_stack_node_a **stack_a, t_stack_node_b **stack_b)
+void	rev_rotate_sub(t_stacks **stack_b, int j)
 {
-	if (*stack_a != NULL && (*stack_a)->next != NULL && *stack_b != NULL
-		&& (*stack_b)->next != NULL)
+	t_stacks	*tmp;
+	int		i;
+
+	i = 0;
+	tmp = *stack_b;
+	while ((*stack_b)->next)
 	{
-		rev_rotate_a(stack_a);
-		rev_rotate_b(stack_b);
-		printf("rrr\n");
+		i++;
+		*stack_b = (*stack_b)->next;
 	}
+	(*stack_b)->next = tmp;
+	while (i > 1)
+	{
+		tmp = tmp->next;
+		i--;
+	}
+	tmp->next = NULL;
+	if (j == 0)
+		write(1, "rrr\n", 4);
 }
 
-void	rev_rotate_a(t_stack_node_a **bottom_a)
+void	ft_rrr(t_stacks **a, t_stacks **b, int j)
 {
-	t_stack_node_a	*current;
-	t_stack_node_a	*new_head;
+	t_stacks	*tmp;
+	int		i;
 
-	if (*bottom_a == NULL && (*bottom_a)->next == NULL)
+	if (!*a || !((*a)->next) || !*b || !((*b)->next))
 		return ;
-	current = *bottom_a;
-	new_head = NULL;
-	while (current->next != NULL)
+	i = 0;
+	tmp = *a;
+	while ((*a)->next)
 	{
-		if (current->next->next == NULL)
-			new_head = current;
-		current = current->next;
+		i++;
+		*a = (*a)->next;
 	}
-	current->next = *bottom_a;
-	*bottom_a = new_head->next;
-	new_head->next = NULL;
-	printf("rra\n");
+	(*a)->next = tmp;
+	while (i > 1)
+	{
+		tmp = tmp->next;
+		i--;
+	}
+	tmp->next = NULL;
+	rev_rotate_sub(b, j);
 }
 
-void	rev_rotate_b(t_stack_node_b **bottom_b)
+void	rev_rotate_a(t_stacks **bottom_a, int j)
 {
-	t_stack_node_b	*current;
-	t_stack_node_b	*new_head_b;
+	t_stacks	*tmp;
+	int			i;
 
-	if (*bottom_b == NULL && (*bottom_b)->next == NULL)
+	if (!*bottom_a || !(*bottom_a)->next)
 		return ;
-	current = *bottom_b;
-	new_head_b = NULL;
-	while (current->next != NULL)
+	i = 0;
+	tmp = *bottom_a;
+	while ((*bottom_a)->next)
 	{
-		if (current->next->next == NULL)
-			new_head_b = current;
-		current = current->next;
+		*bottom_a = (*bottom_a)->next;
+		i++;
 	}
-	current->next = *bottom_b;
-	*bottom_b = new_head_b->next;
-	new_head_b->next = NULL;
-	printf("rrb\n");
+	(*bottom_a)->next = tmp;
+	while (i > 1)
+	{
+		tmp = tmp->next;
+		i--;
+	}
+	tmp->next = NULL;
+	if (j == 0)
+		write(1, "rra\n", 4);
+}
+
+void	rev_rotate_b(t_stacks **bottom_b, int j)
+{
+	t_stacks	*tmp;
+	int			i;
+
+	if (!*bottom_b || !(*bottom_b)->next)
+		return ;
+	i = 0;
+	tmp = *bottom_b;
+	while ((*bottom_b)->next)
+	{
+		i++;
+		*bottom_b = (*bottom_b)->next;
+	}
+	(*bottom_b)->next = tmp;
+	while (i > 1)
+	{
+		tmp = tmp->next;
+		i--;
+	}
+	tmp->next = NULL;
+	if (j == 0)
+		write(1, "rrb\n", 4);
 }

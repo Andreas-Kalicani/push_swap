@@ -6,17 +6,17 @@
 /*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 17:53:23 by akalican          #+#    #+#             */
-/*   Updated: 2024/01/01 13:19:31 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/03/05 16:25:28 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack_node_b	*create_list_b(int argc, char **argv)
+t_stacks	*create_list_b(int argc, char **argv)
 {
 	int				i;
-	t_stack_node_b	*stack_b;
-	t_stack_node_b	*tmp;
+	t_stacks	*stack_b;
+	t_stacks	*tmp;
 
 	i = 1;
 	stack_b = create_newnode_b(ft_atoi(argv[i]));
@@ -30,11 +30,11 @@ t_stack_node_b	*create_list_b(int argc, char **argv)
 	return (stack_b);
 }
 
-t_stack_node_b	*create_newnode_b(int val)
+t_stacks	*create_newnode_b(int val)
 {
-	t_stack_node_b	*stack_b;
+	t_stacks	*stack_b;
 
-	stack_b = malloc(sizeof(t_stack_node_b));
+	stack_b = malloc(sizeof(t_stacks));
 	if (!stack_b)
 		return (NULL);
 	stack_b->nbr = val;
@@ -42,27 +42,14 @@ t_stack_node_b	*create_newnode_b(int val)
 	return (stack_b);
 }
 
-void	clear_node_b(t_stack_node_b *lst)
+void	clear_node_b(t_stacks *lst_b)
 {
-	t_stack_node_b	*stack_b;
+	t_stacks	*stack_b;
 
-	while (lst != NULL)
+	while (lst_b != NULL)
 	{
-		stack_b = lst;
-		lst = stack_b->next;
+		stack_b = lst_b;
+		lst_b = stack_b->next;
 		free(stack_b);
 	}
-}
-
-int	stack_size_b(t_stack_node_b *stack_b)
-{
-	int	i;
-
-	i = 0;
-	while (stack_b != NULL)
-	{
-		i++;
-		stack_b = stack_b->next;
-	}
-	return (i);
 }

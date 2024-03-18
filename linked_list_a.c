@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   linked_list_a.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/27 16:32:04 by andreasgjer       #+#    #+#             */
-/*   Updated: 2024/02/27 15:11:55 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/05 16:24:57 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,11 @@ int	ft_atoi(const char *str)
 	return (res * s);
 }
 */
-t_stack_node_a	*create_list(int argc, char **argv)
+t_stacks	*create_list(int argc, char **argv)
 {
 	int				i;
-	t_stack_node_a	*stack_a;
-	t_stack_node_a	*tmp;
+	t_stacks	*stack_a;
+	t_stacks	*tmp;
 
 	i = 1;
 	stack_a = create_stack_a(ft_atoi(argv[i]));
@@ -57,11 +57,11 @@ t_stack_node_a	*create_list(int argc, char **argv)
 	return (stack_a);
 }
 
-t_stack_node_a	*create_stack_a(int val)
+t_stacks	*create_stack_a(int val)
 {
-	t_stack_node_a	*stack_a;
+	t_stacks	*stack_a;
 
-	stack_a = malloc(sizeof(t_stack_node_a));
+	stack_a = malloc(sizeof(t_stacks));
 	if (!stack_a)
 	{
 		free(stack_a);
@@ -72,11 +72,11 @@ t_stack_node_a	*create_stack_a(int val)
 	return (stack_a);
 }
 
-t_stack_node_a	*add_new_node_a(t_stack_node_a *stack_a, int val)
+t_stacks	*add_new_node_a(t_stacks *stack_a, int val)
 {
-	t_stack_node_a	*new_node;
+	t_stacks	*new_node;
 
-	new_node = malloc(sizeof(t_stack_node_a));
+	new_node = malloc(sizeof(t_stacks));
 	if (!new_node)
 	{
 		free(new_node);
@@ -87,15 +87,14 @@ t_stack_node_a	*add_new_node_a(t_stack_node_a *stack_a, int val)
 	return (new_node);
 }
 
-int	stack_size_a(t_stack_node_a *stack_a)
+int	stack_size(t_stacks *stack_a)
 {
 	ft_putstr_fd("herethere\n", 1);
-	size_t	index;
+	int	index;
 
 	index = 0;
 	while (stack_a)
 	{
-		
 		stack_a = stack_a->next;
 		index++;
 	}
@@ -103,9 +102,9 @@ int	stack_size_a(t_stack_node_a *stack_a)
 	return (index);
 }
 
-void	clear_nodes(t_stack_node_a *stack_a)
+void	clear_nodes(t_stacks *stack_a)
 {
-	t_stack_node_a	*lst;
+	t_stacks	*lst;
 
 	while (stack_a != NULL)
 	{

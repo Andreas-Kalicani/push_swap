@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 17:30:33 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/27 15:18:38 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/05 19:54:08 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
-
 
 int	ft_atoi(const char *str)
 {
@@ -39,28 +38,27 @@ int	ft_atoi(const char *str)
 	return (res * s);
 }
 
-
-void print_stack_a(t_stack_node_a *head)
+void	print_stack_a(t_stacks *head_a)
 {
-    t_stack_node_a *current_node = head;
+	t_stacks	*current_node;
 
-    while (current_node != NULL)
-    {
-        printf("%d ", current_node->nbr);
-        current_node = current_node->next;
-    }
-    printf("\n");
-}
-
-
-void	print_stack_b(t_stack_node_b **head)
-{
-	t_stack_node_b	*current_node;
-
-	current_node = *head;
+	current_node = head_a;
 	while (current_node != NULL)
 	{
-		printf("%d ", current_node->nbr);
+		printf("%ld ", current_node->nbr);
+		current_node = current_node->next;
+	}
+	printf("\n");
+}
+
+void	print_stack_b(t_stacks **head_b)
+{
+	t_stacks	*current_node;
+
+	current_node = *head_b;
+	while (current_node != NULL)
+	{
+		printf("%ld ", current_node->nbr);
 		current_node = current_node->next;
 	}
 	printf("\n");

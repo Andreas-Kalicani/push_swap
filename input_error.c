@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input_error.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 11:45:05 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/27 16:05:36 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/05 22:53:05 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,26 +41,20 @@ void	print_error_exit(void)
 	exit(0);
 }
 
-int	check_for_doubles(t_stack_node_a *stack_a)
+int	ft_checkdup(t_stacks *a)
 {
-	t_stack_node_a	*current_node;
-	t_stack_node_a	*compare_node;
+	t_stacks	*tmp;
 
-	current_node = stack_a;
-	while (current_node != NULL)
+	while (a)
 	{
-		compare_node = current_node->next;
-		while (compare_node != NULL)
+		tmp = a->next;
+		while (tmp)
 		{
-			if (current_node->nbr == compare_node->nbr)
-			{
-				ft_putstr_fd("Error: duplicated values\n", 2);
-				clear_nodes(stack_a);
-				exit(0);
-			}
-			compare_node = compare_node->next;
+			if (a->nbr == tmp->nbr)
+				return (1);
+			tmp = tmp->next;
 		}
-		current_node = current_node->next;
+		a = a->next;
 	}
 	return (0);
 }

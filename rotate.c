@@ -6,60 +6,59 @@
 /*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 13:03:44 by akalican          #+#    #+#             */
-/*   Updated: 2024/02/26 13:45:42 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/03/05 23:18:54 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-void	rotate(t_stack_node_a **stack_a, t_stack_node_b **stack_b)
+void	rotate(t_stacks **stack_a, t_stacks **stack_b, int j)
 {
-	if ((*stack_a != NULL && (*stack_a)->next != NULL) && (*stack_b != NULL
-			|| (*stack_b)->next != NULL))
-	{
-		rotate_a(stack_a, 1);
-		rotate_b(stack_b, 1);
-		printf("rr\n");
-	}
-	else
-	{
+	t_stacks	*tmp;
+	ft_putstr_fd("\nrotate\n", 1);
+	if (!*stack_a || !((*stack_a)->next) || !*stack_b || !((*stack_b)->next))
 		return ;
-	}
+	tmp = *stack_a;
+	*stack_a = ft_lstlast(*stack_a);
+	(*stack_a)->next = tmp;
+	*stack_a = tmp->next;
+	tmp->next = NULL;
+	tmp = *stack_b;
+	*stack_b = ft_lstlast(*stack_b);
+	(*stack_b)->next = tmp;
+	*stack_b = tmp->next;
+	tmp->next = NULL;
+	if (j == 0)
+		write(1, "rr\n", 3);
 }
 
-void	rotate_a(t_stack_node_a **head_a, int print)
+void	rotate_a(t_stacks **head_a, int j)
 {
-	t_stack_node_a	*temp_head;
-	t_stack_node_a	*current;
-
-	if (*head_a == NULL || (*head_a)->next == NULL)
+	t_stacks	*tmp;
+	ft_putstr_fd("\n rotate_a\n", 1);
+	if (!*head_a || !(*head_a)->next)
 		return ;
-	temp_head = *head_a;
-	*head_a = (*head_a)->next;
-	current = *head_a;
-	while (current->next != NULL)
-		current = current->next;
-	current->next = temp_head;
-	temp_head->next = NULL;
-	if (print != 0)
-		printf("ra\n");
+	tmp = *head_a;
+	*head_a = ft_lstlast(*head_a);
+	(*head_a)->next = tmp;
+	*head_a = tmp->next;
+	tmp->next = NULL;
+	if (j == 0)
+		write(1, "ra\n", 3);
 }
 
-void	rotate_b(t_stack_node_b **head_b, int print)
+void	rotate_b(t_stacks **head_b, int j)
 {
-	t_stack_node_b	*temp_head;
-	t_stack_node_b	*current;
+	t_stacks	*tmp;
 
-	if (*head_b == NULL || (*head_b)->next == NULL)
+	if (!*head_b || !(*head_b)->next)
 		return ;
-	temp_head = *head_b;
-	*head_b = (*head_b)->next;
-	current = *head_b;
-	while (current->next != NULL)
-		current = current->next;
-	current->next = temp_head;
-	temp_head->next = NULL;
-	if (print != 0)
-		printf("rb\n");
+	tmp = *head_b;
+	*head_b = ft_lstlast(*head_b);
+	(*head_b)->next = tmp;
+	*head_b = tmp->next;
+	tmp->next = NULL;
+	if (j == 0)
+		write(1, "rb\n", 3);
 }
