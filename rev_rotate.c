@@ -6,7 +6,7 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:42:46 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/18 18:40:59 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/18 20:06:43 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,5 +108,5 @@ void	ft_rev_rotate(t_stacks **stack_a, t_stacks **stack_b, int j)
 		i--;
 	}
 	tmp->next = NULL;
-	ft_rrr_sub(stack_b, j);
+	rev_rotate_sub(stack_b, j);
 }

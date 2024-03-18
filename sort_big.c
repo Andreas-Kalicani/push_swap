@@ -6,7 +6,7 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 12:48:44 by andreasgjer       #+#    #+#             */
-/*   Updated: 2024/03/18 17:37:11 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/18 20:02:22 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ void	ft_sort_b_till_3(t_stacks **stack_a, t_stacks **stack_b)
 	}
 }
 
-// seems like it doesn't sort stack_b, instead it's NULL and only sort a, need to take a look here. 
 t_stacks	*ft_sort_b(t_stacks **stack_a)
 {
 	t_stacks	*stack_b;
@@ -75,7 +74,6 @@ t_stacks	**ft_sort_a(t_stacks **stack_a, t_stacks **stack_b)
 				i = ft_apply_rrarrb(stack_a, stack_b, tmp->nbr, 'b');
 			else if (i == ft_case_rrarb_a(*stack_a, *stack_b, tmp->nbr))
 			{
-				ft_putstr_fd("\n in the last else if of sort_a\n", 1);
 				i = ft_apply_rrarb(stack_a, stack_b, tmp->nbr, 'b');
 			}
 			else
@@ -85,8 +83,6 @@ t_stacks	**ft_sort_a(t_stacks **stack_a, t_stacks **stack_b)
 	return (stack_a);
 }
 
-// Even if stack is already sorted it swaps the two first stack on top
-// Need to fix this error 
 void	ft_sort(t_stacks **stack_a)
 {
 	t_stacks	*stack_b;
@@ -112,38 +108,4 @@ void	ft_sort(t_stacks **stack_a)
 		}			
 	}	
 }
-/*
-void	ft_sort(t_stack_node_a **stack_a)
-{
-	t_stack_node_b	*stack_b;
-	int				i;
 
-	printf("Before sorting:\n");
-	print_stack_a(*stack_a);
-	printf("\n");
-	printf("%d", stack_size_a(*stack_a));
-	if (stack_size_a(*stack_a) == 2)
-		swap_a(*stack_a, 0);
-	else
-	{
-		stack_b = ft_sort_b(stack_a);
-		stack_a = ft_sort_a(stack_a, &stack_b);
-		ft_putstr_fd("are we here ?", 1);
-		i = ft_find_index_a(*stack_a, check_min_a_nbr(*stack_a));
-		if (i < stack_size_a(*stack_a) - i)
-		{
-			ft_putstr_fd("are we here 2 ?", 1);
-			while ((*stack_a)->nbr != check_min_a_nbr(*stack_a))
-				rotate_a(stack_a, 0);
-		}
-		else
-		{
-			ft_putstr_fd("are we here 2 ?", 1);
-			while ((*stack_a)->nbr != check_min_a_nbr(*stack_a))
-				rev_rotate_a(stack_a);
-		}
-	}
-	printf("After sorting:\n");
-	print_stack_a(*stack_a);
-}
-*/
