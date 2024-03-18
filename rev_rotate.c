@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rev_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
+/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:42:46 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/05 20:19:57 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/03/18 18:40:59 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,34 +36,11 @@ void	rev_rotate_sub(t_stacks **stack_b, int j)
 		write(1, "rrr\n", 4);
 }
 
-void	ft_rrr(t_stacks **a, t_stacks **b, int j)
-{
-	t_stacks	*tmp;
-	int		i;
-
-	if (!*a || !((*a)->next) || !*b || !((*b)->next))
-		return ;
-	i = 0;
-	tmp = *a;
-	while ((*a)->next)
-	{
-		i++;
-		*a = (*a)->next;
-	}
-	(*a)->next = tmp;
-	while (i > 1)
-	{
-		tmp = tmp->next;
-		i--;
-	}
-	tmp->next = NULL;
-	rev_rotate_sub(b, j);
-}
 
 void	rev_rotate_a(t_stacks **bottom_a, int j)
 {
 	t_stacks	*tmp;
-	int			i;
+	int		i;
 
 	if (!*bottom_a || !(*bottom_a)->next)
 		return ;
@@ -88,7 +65,7 @@ void	rev_rotate_a(t_stacks **bottom_a, int j)
 void	rev_rotate_b(t_stacks **bottom_b, int j)
 {
 	t_stacks	*tmp;
-	int			i;
+	int		i;
 
 	if (!*bottom_b || !(*bottom_b)->next)
 		return ;
@@ -108,4 +85,28 @@ void	rev_rotate_b(t_stacks **bottom_b, int j)
 	tmp->next = NULL;
 	if (j == 0)
 		write(1, "rrb\n", 4);
+}
+
+void	ft_rev_rotate(t_stacks **stack_a, t_stacks **stack_b, int j)
+{
+	t_stacks	*tmp;
+	int		i;
+
+	if (!*stack_a|| !((*stack_a)->next) || !*stack_b || !((*stack_b)->next))
+		return ;
+	i = 0;
+	tmp = *stack_a;
+	while ((*stack_a)->next)
+	{
+		i++;
+		*stack_a = (*stack_a)->next;
+	}
+	(*stack_a)->next = tmp;
+	while (i > 1)
+	{
+		tmp = tmp->next;
+		i--;
+	}
+	tmp->next = NULL;
+	ft_rrr_sub(stack_b, j);
 }

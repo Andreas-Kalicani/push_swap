@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_big.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
+/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 12:48:44 by andreasgjer       #+#    #+#             */
-/*   Updated: 2024/03/05 23:35:07 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/03/18 17:37:11 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,8 @@ void	ft_sort_b_till_3(t_stacks **stack_a, t_stacks **stack_b)
 	int				i;
 	t_stacks	*tmp;
 
-	ft_putstr_fd("HERE3\n", 1);
 	while (ft_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
 	{
-		ft_putstr_fd("fucker\n", 1);
 		tmp = *stack_a;
 		i = ft_rotate_type_ab(*stack_a, *stack_b);
 		while (i >= 0)
@@ -53,12 +51,9 @@ t_stacks	*ft_sort_b(t_stacks **stack_a)
 	if (ft_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
 	{
 		ft_sort_b_till_3(stack_a, &stack_b);
-		print_stack_b(&stack_b);
 	}
 	if (!ft_checksorted(*stack_a))
 		ft_sort_three(stack_a);
-	printf("%p", (void *)stack_b);
-	ft_putstr_fd("Something is wrong\n", 1);
 	return (stack_b);
 }
 
@@ -66,7 +61,6 @@ t_stacks	**ft_sort_a(t_stacks **stack_a, t_stacks **stack_b)
 {
 	int				i;
 	t_stacks	*tmp;
-	ft_putstr_fd("we are in sort_a\n", 1);
 	while (*stack_b)
 	{
 		tmp = *stack_b;

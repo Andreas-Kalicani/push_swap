@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_three.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
+/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:04:58 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/05 17:47:32 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/03/18 17:29:18 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 void	ft_sort_three(t_stacks **stack_a)
 {
-	printf("i am here");
 	if (check_min(*stack_a) == (*stack_a)->nbr)
 	{
 		rev_rotate_a(stack_a, 0);

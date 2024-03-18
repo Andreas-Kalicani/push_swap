@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
+/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:06:07 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/05 22:53:36 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/03/18 18:41:54 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,7 +110,7 @@ void				rotate(t_stacks **stack_a, t_stacks **stack_b, int j);
 void				rev_rotate_a(t_stacks **bottom_a, int j);
 void				rev_rotate_b(t_stacks **bottom_b, int j);
 void				rev_rotate_sub(t_stacks **stack_b, int j);
-void				ft_rrr(t_stacks **a, t_stacks **b, int j);
+void				ft_rev_rotate(t_stacks **stack_a, t_stacks **stack_b, int j);
 
 /* check_max_min_a.c */
 int					check_min(t_stacks *stack);
@@ -151,28 +151,28 @@ void				ft_freestr(char **lst);
 int					ft_checksorted(t_stacks *stack);
 
 /* applyin1.c */
-int					ft_apply_rarb(t_stacks **stack_a, t_stacks **stack_b, int c,
+int					ft_apply_rarb(t_stacks **a, t_stacks **b, int c,
 						char s);
-int					ft_apply_rrarrb(t_stacks **stack_a, t_stacks **stack_b,
+int					ft_apply_rrarrb(t_stacks **a, t_stacks **b,
 						int c, char s);
-int					ft_apply_rrarb(t_stacks **stack_a, t_stacks **stack_b,
+int					ft_apply_rrarb(t_stacks **a, t_stacks **b,
 						int c, char s);
-int					ft_apply_rarrb(t_stacks **stack_a, t_stacks **stack_b,
+int					ft_apply_rarrb(t_stacks **a, t_stacks **b,
 						int c, char s);
 
 /* solver_utils_ab.c */
-int					ft_case_rarb(t_stacks *stack_a, t_stacks *stack_b, int c);
-int					ft_case_rrarrb(t_stacks *stack_a, t_stacks *stack_b, int c);
-int					ft_case_rrarb(t_stacks *stack_a, t_stacks *stack_b, int c);
-int					ft_case_rarrb(t_stacks *stack_a, t_stacks *stack_b, int c);
+int					ft_case_rarb(t_stacks *a, t_stacks *b, int c);
+int					ft_case_rrarrb(t_stacks *a, t_stacks *b, int c);
+int					ft_case_rrarb(t_stacks *a, t_stacks *b, int c);
+int					ft_case_rarrb(t_stacks *a, t_stacks *b, int c);
 
 /*solvert_utils_ba*/
-int					ft_case_rarb_a(t_stacks *stack_a, t_stacks *stack_b, int c);
-int					ft_case_rrarrb_a(t_stacks *stack_a, t_stacks *stack_b,
+int					ft_case_rarb_a(t_stacks *a, t_stacks *b, int c);
+int					ft_case_rrarrb_a(t_stacks *a, t_stacks *b,
 						int c);
-int					ft_case_rarrb_a(t_stacks *stack_a, t_stacks *stack_b,
+int					ft_case_rarrb_a(t_stacks *a, t_stacks *b,
 						int c);
-int					ft_case_rrarb_a(t_stacks *stack_a, t_stacks *stack_b,
+int					ft_case_rrarb_a(t_stacks *a, t_stacks *b,
 						int c);
 
 /*rotate_type.c*/
@@ -202,4 +202,17 @@ void				ft_add_back(t_stacks **stack,
 						t_stacks *stack_new);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putnbr_fd(int n, int fd);
+
+/*operations.c all*/
+void	ft_ra(t_stacks **a, int j); 
+void	ft_sa(t_stacks **a, int j);
+void	ft_pa(t_stacks **a, t_stacks **b, int j);
+void	ft_rra(t_stacks **a, int j);
+void	ft_ss(t_stacks **a, t_stacks **b, int j);
+void	ft_rr(t_stacks **a, t_stacks **b, int j);
+void	ft_rrr_sub(t_stacks **b, int j);
+void	ft_rrr(t_stacks **a, t_stacks **b, int j);
+void	ft_pb(t_stacks **stack_a, t_stacks **stack_b, int j);
+void	ft_rrb(t_stacks **b, int j);
+void	ft_rb(t_stacks **b, int j);
 #endif

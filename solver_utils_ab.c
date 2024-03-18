@@ -3,59 +3,64 @@
 /*                                                        :::      ::::::::   */
 /*   solver_utils_ab.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
+/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 13:50:10 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/05 23:40:49 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/03/18 17:10:53 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_case_rarb(t_stacks *stack_a, t_stacks *stack_b, int c)
+int	ft_case_rarb(t_stacks *a, t_stacks *b, int c)
 {
-	ft_putstr_fd("fucker ducker\n", 1 );
 	int	i;
-	i = ft_find_place_b(stack_b, c);
-	ft_putstr_fd("fucker lucker\n", 1 );
-	if (i < ft_find_index(stack_a, c))
-	{
-		i = ft_find_index(stack_a, c);
-	}
+
+	i = ft_find_place_b(b, c);
+	if (i < ft_find_index(a, c))
+		i = ft_find_index(a, c);
 	return (i);
 }
 
-int	ft_case_rrarrb(t_stacks *stack_a, t_stacks *stack_b, int c)
-{
-	int	i;
-	ft_putstr_fd("fucker lucker\n", 1 );
-	i = 0;
-	if (ft_find_place_b(stack_b, c))
-		i = ft_lstsize(stack_b) - ft_find_place_b(stack_b, c);
-	if ((i < (ft_lstsize(stack_a) - ft_find_index(stack_a, c)))
-		&& ft_find_index(stack_a, c))
-		i = ft_lstsize(stack_a) - ft_find_index(stack_a, c);
-	return (i);
-}
-
-int	ft_case_rrarb(t_stacks *stack_a, t_stacks *stack_b, int c)
+// This function calculates how many times we should rotate the stacks together.
+// Because after a certain amoun of rotate, we will proceed only with one stack
+// rotation. Since here we have reverse rotate,rather than index number,
+// we check reverse index number which is 
+// calculated by list_size - index_number.
+int	ft_case_rrarrb(t_stacks *a, t_stacks *b, int c)
 {
 	int	i;
 
 	i = 0;
-	if (ft_find_index(stack_a, c))
-		i = ft_lstsize(stack_a) - ft_find_index(stack_a, c);
-	i = ft_find_place_b(stack_b, c) + i;
+	if (ft_find_place_b(b, c))
+		i = ft_lstsize(b) - ft_find_place_b(b, c);
+	if ((i < (ft_lstsize(a) - ft_find_index(a, c))) && ft_find_index(a, c))
+		i = ft_lstsize(a) - ft_find_index(a, c);
 	return (i);
 }
 
-int	ft_case_rarrb(t_stacks *stack_a, t_stacks *stack_b, int c)
+// Again, this function makes similar calculations.
+// This function do same calculations for rra+rb case.
+int	ft_case_rrarb(t_stacks *a, t_stacks *b, int c)
 {
 	int	i;
 
 	i = 0;
-	if (ft_find_place_b(stack_b, c))
-		i = ft_lstsize(stack_b) - ft_find_place_b(stack_b, c);
-	i = ft_find_index(stack_a, c) + i;
+	if (ft_find_index(a, c))
+		i = ft_lstsize(a) - ft_find_index(a, c);
+	i = ft_find_place_b(b, c) + i;
+	return (i);
+}
+
+// Again, this function makes similar calculations.
+// This function do same calculations for ra+rrb case.
+int	ft_case_rarrb(t_stacks *a, t_stacks *b, int c)
+{
+	int	i;
+
+	i = 0;
+	if (ft_find_place_b(b, c))
+		i = ft_lstsize(b) - ft_find_place_b(b, c);
+	i = ft_find_index(a, c) + i;
 	return (i);
 }

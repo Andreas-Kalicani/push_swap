@@ -3,65 +3,65 @@
 /*                                                        :::      ::::::::   */
 /*   solver_utils_ba.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
+/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 15:39:51 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/05 23:22:41 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/03/18 17:11:26 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_case_rarb_a(t_stacks *stack_a, t_stacks *stack_b, int c)
+#include "push_swap.h"
+
+// This function calculates the required amount of rotation.
+// Calculations are done for ra+rb case.
+int	ft_case_rarb_a(t_stacks *a, t_stacks *b, int c)
 {
 	int	i;
 
-	i = ft_find_place_a(stack_a, c);
-	if (i < ft_find_index(stack_b, c))
-	{
-		i = ft_find_index(stack_b, c);
-	}
+	i = ft_find_place_a(a, c);
+	if (i < ft_find_index(b, c))
+		i = ft_find_index(b, c);
 	return (i);
 }
 
-int	ft_case_rrarrb_a(t_stacks *stack_a, t_stacks *stack_b, int c)
-{
-	int	i;
-	ft_putstr_fd("\ncase_rrarrb_a\n", 1);
-	i = 0;
-	if (ft_find_place_a(stack_a, c))
-	{
-		ft_putstr_fd("\nin the first of case_rrarrb_a\n", 1);
-		i = ft_lstsize(stack_a) - ft_find_place_a(stack_a, c);
-	}
-	if ((i < (ft_lstsize(stack_b) - ft_find_index(stack_b, c)))
-		&& ft_find_index(stack_b, c))
-		{
-			ft_putstr_fd("\nin the second if of case_rrarrb_a\n", 1);
-			i = ft_lstsize(stack_b) - ft_find_index(stack_b, c);
-		}
-	ft_putstr_fd("\nleaving case_rrarrb_a\n", 1);
-	return (i);
-}
-
-int	ft_case_rarrb_a(t_stacks *stack_a, t_stacks *stack_b, int c)
+// This function calculates the required amount of rotation.
+// Calculations are done for rra+rrb case.
+int	ft_case_rrarrb_a(t_stacks *a, t_stacks *b, int c)
 {
 	int	i;
 
 	i = 0;
-	if (ft_find_index(stack_b, c))
-		i = ft_lstsize(stack_b) - ft_find_index(stack_b, c);
-	i = ft_find_place_a(stack_a, c) + i;
+	if (ft_find_place_a(a, c))
+		i = ft_lstsize(a) - ft_find_place_a(a, c);
+	if ((i < (ft_lstsize(b) - ft_find_index(b, c))) && ft_find_index(b, c))
+		i = ft_lstsize(b) - ft_find_index(b, c);
 	return (i);
 }
 
-int	ft_case_rrarb_a(t_stacks *stack_a, t_stacks *stack_b, int c)
+// This function calculates the required amount of rotation.
+// Calculations are done for ra+rrb case.
+int	ft_case_rarrb_a(t_stacks *a, t_stacks *b, int c)
 {
 	int	i;
 
 	i = 0;
-	if (ft_find_place_a(stack_a, c))
-		i = ft_lstsize(stack_a) - ft_find_place_a(stack_a, c);
-	i = ft_find_index(stack_b, c) + i;
+	if (ft_find_index(b, c))
+		i = ft_lstsize(b) - ft_find_index(b, c);
+	i = ft_find_place_a(a, c) + i;
+	return (i);
+}
+
+// This function calculates the required amount of rotation.
+// Calculations are done for rra+rb case.
+int	ft_case_rrarb_a(t_stacks *a, t_stacks *b, int c)
+{
+	int	i;
+
+	i = 0;
+	if (ft_find_place_a(a, c))
+		i = ft_lstsize(a) - ft_find_place_a(a, c);
+	i = ft_find_index(b, c) + i;
 	return (i);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
+/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/29 17:30:33 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/05 19:54:08 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/03/18 17:31:22 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

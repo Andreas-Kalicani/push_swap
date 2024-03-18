@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
+/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 11:06:08 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/05 23:38:09 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/03/18 17:28:37 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 t_stacks	*ft_lstlast(t_stacks *lst)
 {
-	ft_putstr_fd("\nft_lstlast\n", 1);
 	if (!lst)
 		return (NULL);
 	while (lst->next)
@@ -23,7 +22,6 @@ t_stacks	*ft_lstlast(t_stacks *lst)
 		/*ft_putstr_fd("\nft_lst in while\n", 1);*/
 		lst = lst->next;
 	}
-	ft_putstr_fd("\n end ft_lstlast\n", 1);
 	return (lst);
 }
 
@@ -91,7 +89,6 @@ int	ft_find_place_b(t_stacks *stack_b, int nbr_push)
 {
 	int			i;
 	t_stacks	*tmp;
-	ft_putstr_fd("\nfind place b\n", 1);
 	i = 1;
 	if (nbr_push > stack_b->nbr && nbr_push < ft_lstlast(stack_b)->nbr)
 		i = 0;
@@ -116,10 +113,8 @@ int	ft_find_place_a(t_stacks *stack_a, int nbr_push)
 	t_stacks *tmp;
 
 	i = 1;
-	ft_putstr_fd("\n start of fid place_a\n", 1);
 	if (nbr_push < stack_a->nbr && nbr_push > ft_lstlast(stack_a)->nbr)
 	{
-		ft_putstr_fd("\n inside if find_place a 1\n", 1);
 		i = 0;
 	}
 	else if (nbr_push > check_max(stack_a) || nbr_push < check_min(stack_a))
@@ -134,6 +129,5 @@ int	ft_find_place_a(t_stacks *stack_a, int nbr_push)
 			i++;
 		}
 	}
-	ft_putstr_fd("\nfind place a\n", 1);
 	return (i);
 }

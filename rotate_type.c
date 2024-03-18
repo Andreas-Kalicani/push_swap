@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_type.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
+/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 13:25:31 by andreasgjer       #+#    #+#             */
-/*   Updated: 2024/03/05 23:01:03 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/03/18 17:14:50 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	ft_rotate_type_ba(t_stacks *stack_a, t_stacks *stack_b)
 	t_stacks	*tmp;
 
 	tmp = stack_b;
-	ft_putstr_fd("rotate type\n", 1);
 	i = ft_case_rrarrb_a(stack_a, stack_b, stack_b->nbr);
 	while (tmp)
 	{
