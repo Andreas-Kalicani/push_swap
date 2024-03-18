@@ -6,7 +6,7 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 12:48:44 by andreasgjer       #+#    #+#             */
-/*   Updated: 2024/03/18 20:02:22 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/18 20:58:18 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ void	ft_sort_b_till_3(t_stacks **stack_a, t_stacks **stack_b)
 		i = ft_rotate_type_ab(*stack_a, *stack_b);
 		while (i >= 0)
 		{
-			if (i == ft_case_rarb(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rarb(stack_a, stack_b, tmp->nbr, 'a');
-			else if (i == ft_case_rrarrb(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rrarrb(stack_a, stack_b, tmp->nbr, 'a');
-			else if (i == ft_case_rarrb(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rarrb(stack_a, stack_b, tmp->nbr, 'a');
-			else if (i == ft_case_rrarb(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rrarb(stack_a, stack_b, tmp->nbr, 'a');
+			if (i == ft_check_rarb(*stack_a, *stack_b, tmp->nbr))
+				i = ft_execute_rarb(stack_a, stack_b, tmp->nbr, 'a');
+			else if (i == ft_check_rrarrb(*stack_a, *stack_b, tmp->nbr))
+				i = ft_execute_rrarrb(stack_a, stack_b, tmp->nbr, 'a');
+			else if (i == ft_check_rarrb(*stack_a, *stack_b, tmp->nbr))
+				i = ft_execute_rarrb(stack_a, stack_b, tmp->nbr, 'a');
+			else if (i == ft_check_rrarb(*stack_a, *stack_b, tmp->nbr))
+				i = ft_execute_rrarb(stack_a, stack_b, tmp->nbr, 'a');
 			else
 				tmp = tmp->next;
 		}
@@ -66,15 +66,15 @@ t_stacks	**ft_sort_a(t_stacks **stack_a, t_stacks **stack_b)
 		i = ft_rotate_type_ba(*stack_a, *stack_b);
 		while (i >= 0)
 		{
-			if (i == ft_case_rarb_a(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rarb(stack_a, stack_b, tmp->nbr, 'b');
-			else if (i == ft_case_rarrb_a(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rarrb(stack_a, stack_b, tmp->nbr, 'b');
-			else if (i == ft_case_rrarrb_a(*stack_a, *stack_b, tmp->nbr))
-				i = ft_apply_rrarrb(stack_a, stack_b, tmp->nbr, 'b');
-			else if (i == ft_case_rrarb_a(*stack_a, *stack_b, tmp->nbr))
+			if (i == ft_check_rarb_a(*stack_a, *stack_b, tmp->nbr))
+				i = ft_execute_rarb(stack_a, stack_b, tmp->nbr, 'b');
+			else if (i == ft_check_rarrb_a(*stack_a, *stack_b, tmp->nbr))
+				i = ft_execute_rarrb(stack_a, stack_b, tmp->nbr, 'b');
+			else if (i == ft_check_rrarrb_a(*stack_a, *stack_b, tmp->nbr))
+				i = ft_execute_rrarrb(stack_a, stack_b, tmp->nbr, 'b');
+			else if (i == ft_check_rrarb_a(*stack_a, *stack_b, tmp->nbr))
 			{
-				i = ft_apply_rrarb(stack_a, stack_b, tmp->nbr, 'b');
+				i = ft_execute_rrarb(stack_a, stack_b, tmp->nbr, 'b');
 			}
 			else
 				tmp = tmp->next;

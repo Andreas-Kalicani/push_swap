@@ -6,7 +6,7 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:06:07 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/18 20:07:43 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/18 21:00:03 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,28 +112,28 @@ void				ft_freestr(char **lst);
 /* ft_checkedsorted.c */
 int					ft_checksorted(t_stacks *stack);
 
-/* applyin1.c */
-int					ft_apply_rarb(t_stacks **stack_a, t_stacks **stack_b, int c, char s);
-int					ft_apply_rrarrb(t_stacks **stack_a, t_stacks **stack_b,
+/* executing.c */
+int					ft_execute_rarb(t_stacks **stack_a, t_stacks **stack_b, int c, char s);
+int					ft_execute_rrarrb(t_stacks **stack_a, t_stacks **stack_b,
 						int c, char s);
-int					ft_apply_rrarb(t_stacks **stack_a, t_stacks **stack_b,
+int					ft_execute_rrarb(t_stacks **stack_a, t_stacks **stack_b,
 						int c, char s);
-int					ft_apply_rarrb(t_stacks **stack_a, t_stacks **stack_b,
+int					ft_execute_rarrb(t_stacks **stack_a, t_stacks **stack_b,
 						int c, char s);
 
-/* solver_utils_ab.c */
-int					ft_case_rarb(t_stacks *a, t_stacks *b, int c);
-int					ft_case_rrarrb(t_stacks *a, t_stacks *b, int c);
-int					ft_case_rrarb(t_stacks *a, t_stacks *b, int c);
-int					ft_case_rarrb(t_stacks *a, t_stacks *b, int c);
+/* checking_ab.c */
+int					ft_check_rarb(t_stacks *stack_a, t_stacks *stack_b, int c);
+int					ft_check_rrarrb(t_stacks *stack_a, t_stacks *stack_b, int c);
+int					ft_check_rrarb(t_stacks *stack_a, t_stacks *stack_b, int c);
+int					ft_check_rarrb(t_stacks *stack_a, t_stacks *stack_b, int c);
 
-/*solvert_utils_ba*/
-int					ft_case_rarb_a(t_stacks *a, t_stacks *b, int c);
-int					ft_case_rrarrb_a(t_stacks *a, t_stacks *b,
+/*checking_ba*/
+int					ft_check_rarb_a(t_stacks *stack_a, t_stacks *stack_b, int c);
+int					ft_check_rrarrb_a(t_stacks *stack_a, t_stacks *stack_b,
 						int c);
-int					ft_case_rarrb_a(t_stacks *a, t_stacks *b,
+int					ft_check_rarrb_a(t_stacks *stack_a, t_stacks *stack_b,
 						int c);
-int					ft_case_rrarb_a(t_stacks *a, t_stacks *b,
+int					ft_check_rrarb_a(t_stacks *stack_a, t_stacks *stack_b,
 						int c);
 
 /*rotate_type.c*/
