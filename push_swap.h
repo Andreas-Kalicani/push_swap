@@ -6,7 +6,7 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:06:07 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/18 21:00:03 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/18 22:07:24 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ typedef struct s_stacks
 /*linked_list_a*/
 
 t_stacks			*create_stack_a(int val);
-int					stack_size(t_stacks *stack_a);
 void				clear_nodes(t_stacks *stack_a);
 t_stacks			*add_new_node_a(t_stacks *stack_a, int val);
 t_stacks			*create_list(int argc, char **argv);
@@ -47,10 +46,7 @@ int					ft_isdigit(int c);
 size_t				ft_strlen(const char *s);
 
 /*utils_2.c*/
-long				ft_atol(const char *npoint);
 void				ft_putstr_fd(char *s, int fd);
-void				get_top_stack_a(t_stacks *stacks_a, t_stacks *head_a,
-						int i);
 
 /*push_a_to_b*/
 void				push_a_to_b(t_stacks **stack_a, t_stacks **stack_b, int j);

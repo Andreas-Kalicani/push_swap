@@ -6,7 +6,7 @@
 /*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 11:06:08 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/18 17:28:37 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/18 22:08:33 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,7 @@ t_stacks	*ft_lstlast(t_stacks *lst)
 	if (!lst)
 		return (NULL);
 	while (lst->next)
-	{
-		/*ft_putstr_fd("\nft_lst in while\n", 1);*/
 		lst = lst->next;
-	}
 	return (lst);
 }
 
@@ -49,41 +46,6 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd((t + '0'), fd);
 }
 
-/*
-int	ft_find_place_b(t_stack_node_b **head_b, int nbr_of_push)
-{
-	int				i;
-	t_stack_node_b	*tmp;
-
-	i = 1;
-	print_stack_b(*head_b);
-	print_stack_b(*head_b);
-	ft_putstr_fd("\n=====Wooooooo====\n", 1 );
-	ft_putstr_fd("\n=====Wooooooo====\n", 1 );
-	ft_putstr_fd("\n=====Wooooooo====\n", 1 );
-	tmp = *head_b;
-	ft_putstr_fd("\n== here now ===\n", 1);
-	if (nbr_of_push > check_max_b_nbr(*head_b)
-		|| nbr_of_push < check_min_b_nbr(*head_b))
-	{
-		ft_putstr_fd("HERE5\n", 1 );
-		i = ft_find_index_b(*head_b, check_max_b_nbr(*head_b));
-	}
-	else
-	{
-		ft_putstr_fd("HERE5\n", 1 );
-		tmp = tmp->next;
-		while (tmp->nbr < nbr_of_push || tmp->nbr > nbr_of_push)
-		{
-			tmp = *head_b;
-			tmp = tmp->next;
-			i++;
-		}
-	}
-	ft_putstr_fd("HERE5\n", 1 );
-	return (i);
-}
-*/
 
 int	ft_find_place_b(t_stacks *stack_b, int nbr_push)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_max_min_a.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
+/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 09:21:26 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/05 14:50:01 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/03/18 22:14:39 by akalican         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ int	ft_lstsize(t_stacks *lst)
 	return (i);
 }
 
-
 int	check_min(t_stacks *stack)
 {
 	int		i;
@@ -39,7 +38,6 @@ int	check_min(t_stacks *stack)
 	}
 	return (i);
 }
-
 
 int	check_max(t_stacks *stack)
 {
