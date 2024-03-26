@@ -1,6 +1,6 @@
-NAME = push_swap.a
+NAME = push_swap
 CC = gcc
-TARGETS = push_swap.c check_cheapest.c check_max_min_a.c check_max_min_b.c input_error.c linked_list_a.c linked_list_b.c push_a_to_b.c push_b_to_a.c rev_rotate.c rotate.c swap.c utils.c utils_2.c 
+TARGETS = push_swap.c check_max_min_a.c input_error.c executing.c push_a_to_b.c push_b_to_a.c rev_rotate.c rotate.c swap.c utils.c utils_2.c ft_add_back_a.c ft_free.c ft_freestr.c ft_sort_three.c ft_split.c utils3.c utils4.c utils5.c
 CFLAGS = -Wall -Wextra -Werror
 OBJS = $(TARGETS:.c=.o)
 
