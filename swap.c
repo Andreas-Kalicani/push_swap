@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   swap.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 12:11:08 by andreasgjer       #+#    #+#             */
-/*   Updated: 2024/03/18 18:32:46 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/26 12:19:10 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void	swap_a(t_stacks **head_a, int print)
 
 void	swap_b(t_stacks **head_b, int print)
 {
-		t_stacks	*tmp;
+	t_stacks	*tmp;
 
 	if (!*head_b || !((*head_b)->next))
 		return ;

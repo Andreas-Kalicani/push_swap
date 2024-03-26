@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rev_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 15:42:46 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/18 20:06:43 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/26 12:18:39 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	rev_rotate_sub(t_stacks **stack_b, int j)
 {
 	t_stacks	*tmp;
-	int		i;
+	int			i;
 
 	i = 0;
 	tmp = *stack_b;
@@ -36,11 +36,10 @@ void	rev_rotate_sub(t_stacks **stack_b, int j)
 		write(1, "rrr\n", 4);
 }
 
-
 void	rev_rotate_a(t_stacks **bottom_a, int j)
 {
 	t_stacks	*tmp;
-	int		i;
+	int			i;
 
 	if (!*bottom_a || !(*bottom_a)->next)
 		return ;
@@ -65,7 +64,7 @@ void	rev_rotate_a(t_stacks **bottom_a, int j)
 void	rev_rotate_b(t_stacks **bottom_b, int j)
 {
 	t_stacks	*tmp;
-	int		i;
+	int			i;
 
 	if (!*bottom_b || !(*bottom_b)->next)
 		return ;
@@ -90,9 +89,9 @@ void	rev_rotate_b(t_stacks **bottom_b, int j)
 void	ft_rev_rotate(t_stacks **stack_a, t_stacks **stack_b, int j)
 {
 	t_stacks	*tmp;
-	int		i;
+	int			i;
 
-	if (!*stack_a|| !((*stack_a)->next) || !*stack_b || !((*stack_b)->next))
+	if (!*stack_a || !((*stack_a)->next) || !*stack_b || !((*stack_b)->next))
 		return ;
 	i = 0;
 	tmp = *stack_a;

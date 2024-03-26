@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 13:03:44 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/18 18:31:12 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/26 12:18:53 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 void	rotate(t_stacks **stack_a, t_stacks **stack_b, int j)
 {
 	t_stacks	*tmp;
+
 	if (!*stack_a || !((*stack_a)->next) || !*stack_b || !((*stack_b)->next))
 		return ;
 	tmp = *stack_a;

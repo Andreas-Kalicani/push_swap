@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate_type.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 13:25:31 by andreasgjer       #+#    #+#             */
-/*   Updated: 2024/03/18 20:56:24 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/26 12:18:46 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_three.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/26 13:04:58 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/18 17:29:18 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/26 12:17:23 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,4 @@ void	ft_sort_three(t_stacks **stack_a)
 		else
 			swap_a(stack_a, 0);
 	}
-
 }

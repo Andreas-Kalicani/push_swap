@@ -6,7 +6,7 @@
 /*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 18:37:13 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/05 19:24:08 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/03/26 12:16:02 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,4 @@ int	ft_checksorted(t_stacks *stack_a)
 		stack_a = stack_a->next;
 	}
 	return (1);
-
 }

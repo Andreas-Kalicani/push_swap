@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_big.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/21 12:48:44 by andreasgjer       #+#    #+#             */
-/*   Updated: 2024/03/18 20:58:18 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/26 12:19:03 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	ft_sort_b_till_3(t_stacks **stack_a, t_stacks **stack_b)
 {
-	int				i;
+	int			i;
 	t_stacks	*tmp;
 
 	while (ft_lstsize(*stack_a) > 3 && !ft_checksorted(*stack_a))
@@ -58,8 +58,9 @@ t_stacks	*ft_sort_b(t_stacks **stack_a)
 
 t_stacks	**ft_sort_a(t_stacks **stack_a, t_stacks **stack_b)
 {
-	int				i;
+	int			i;
 	t_stacks	*tmp;
+
 	while (*stack_b)
 	{
 		tmp = *stack_b;
@@ -86,7 +87,7 @@ t_stacks	**ft_sort_a(t_stacks **stack_a, t_stacks **stack_b)
 void	ft_sort(t_stacks **stack_a)
 {
 	t_stacks	*stack_b;
-	int		i;
+	int			i;
 
 	stack_b = NULL;
 	if (ft_lstsize(*stack_a) == 2)
@@ -105,7 +106,6 @@ void	ft_sort(t_stacks **stack_a)
 		{
 			while ((*stack_a)->nbr != check_min(*stack_a))
 				rev_rotate_a(stack_a, 0);
-		}			
-	}	
+		}
+	}
 }
-

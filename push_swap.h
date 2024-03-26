@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:06:07 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/18 22:07:24 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/26 12:49:15 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,11 @@
 typedef struct s_stacks
 {
 	struct s_stacks	*next;
-	long				index;
-	long				nbr;
+	long			index;
+	long			nbr;
 }					t_stacks;
 
-
 /*linked_list_a*/
-
-t_stacks			*create_stack_a(int val);
-void				clear_nodes(t_stacks *stack_a);
-t_stacks			*add_new_node_a(t_stacks *stack_a, int val);
-t_stacks			*create_list(int argc, char **argv);
-
-/*linked_list_b*/
-t_stacks			*create_list_b(int argc, char **argv);
-t_stacks			*create_newnode_b(int val);
-void				clear_node_b(t_stacks *lst_b);
 
 /*utils*/
 int					ft_atoi(const char *str);
@@ -68,7 +57,8 @@ void				rotate(t_stacks **stack_a, t_stacks **stack_b, int j);
 void				rev_rotate_a(t_stacks **bottom_a, int j);
 void				rev_rotate_b(t_stacks **bottom_b, int j);
 void				rev_rotate_sub(t_stacks **stack_b, int j);
-void				ft_rev_rotate(t_stacks **stack_a, t_stacks **stack_b, int j);
+void				ft_rev_rotate(t_stacks **stack_a, t_stacks **stack_b,
+						int j);
 
 /* check_max_min_a.c */
 int					check_min(t_stacks *stack);
@@ -81,8 +71,6 @@ int					ft_lstsize(t_stacks *lst);
 void				print_error_exit(void);
 void				check_size_int(int argc, char **argv);
 int					ft_checkdup(t_stacks *a);
-void				check_int(int argc, char **argv);
-void				input_error(int argc, char **argv);
 
 /* utils3.c */
 t_stacks			*ft_lstlast(t_stacks *lst);
@@ -102,14 +90,15 @@ char				**ft_split(char const *s, char c);
 /* ft_add_node_back.c */
 void				ft_add_back(t_stacks **stack, t_stacks *stack_new);
 
-/*void	ft_parse_arg */
+/*void	ft_freestr */
 void				ft_freestr(char **lst);
 
 /* ft_checkedsorted.c */
 int					ft_checksorted(t_stacks *stack);
 
 /* executing.c */
-int					ft_execute_rarb(t_stacks **stack_a, t_stacks **stack_b, int c, char s);
+int					ft_execute_rarb(t_stacks **stack_a, t_stacks **stack_b,
+						int c, char s);
 int					ft_execute_rrarrb(t_stacks **stack_a, t_stacks **stack_b,
 						int c, char s);
 int					ft_execute_rrarb(t_stacks **stack_a, t_stacks **stack_b,
@@ -119,12 +108,14 @@ int					ft_execute_rarrb(t_stacks **stack_a, t_stacks **stack_b,
 
 /* checking_ab.c */
 int					ft_check_rarb(t_stacks *stack_a, t_stacks *stack_b, int c);
-int					ft_check_rrarrb(t_stacks *stack_a, t_stacks *stack_b, int c);
+int					ft_check_rrarrb(t_stacks *stack_a, t_stacks *stack_b,
+						int c);
 int					ft_check_rrarb(t_stacks *stack_a, t_stacks *stack_b, int c);
 int					ft_check_rarrb(t_stacks *stack_a, t_stacks *stack_b, int c);
 
 /*checking_ba*/
-int					ft_check_rarb_a(t_stacks *stack_a, t_stacks *stack_b, int c);
+int					ft_check_rarb_a(t_stacks *stack_a, t_stacks *stack_b,
+						int c);
 int					ft_check_rrarrb_a(t_stacks *stack_a, t_stacks *stack_b,
 						int c);
 int					ft_check_rarrb_a(t_stacks *stack_a, t_stacks *stack_b,
@@ -155,8 +146,7 @@ t_stacks			*ft_process(int argc, char **argv);
 
 t_stacks			*ft_stack_new(int content);
 
-void				ft_add_back(t_stacks **stack,
-						t_stacks *stack_new);
+void				ft_add_back(t_stacks **stack, t_stacks *stack_new);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putnbr_fd(int n, int fd);
 

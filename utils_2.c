@@ -3,16 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   utils_2.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 11:22:52 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/18 22:05:41 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/26 12:19:16 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
-
 
 void	ft_putstr_fd(char *s, int fd)
 {

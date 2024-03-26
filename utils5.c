@@ -6,7 +6,7 @@
 /*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 15:14:24 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/05 16:01:28 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/03/26 12:19:59 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,9 +44,9 @@ int	ft_atoi2(const char *str)
 t_stacks	*ft_sub_process(char **argv)
 {
 	t_stacks	*stack_a;
-	char			**tmp;
-	int				i;
-	int				j;
+	char		**tmp;
+	int			i;
+	int			j;
 
 	stack_a = NULL;
 	i = 0;
@@ -64,9 +64,9 @@ t_stacks	*ft_sub_process(char **argv)
 
 t_stacks	*ft_process(int argc, char **argv)
 {
-	t_stacks *stack_a;
-	int i;
-	int j;
+	t_stacks	*stack_a;
+	int			i;
+	int			j;
 
 	i = 1;
 	stack_a = NULL;

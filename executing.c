@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   applying1.c                                        :+:      :+:    :+:   */
+/*   executing.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 10:20:13 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/18 20:45:36 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/26 12:15:48 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,6 @@ int	ft_execute_rarb(t_stacks **stack_a, t_stacks **stack_b, int c, char s)
 	return (-1);
 }
 
-// This function rotate both stack_a and stack_b in the
-// reverse direction as required amount.
 int	ft_execute_rrarrb(t_stacks **stack_a, t_stacks **stack_b, int c, char s)
 {
 	if (s == 'a')
@@ -63,7 +61,6 @@ int	ft_execute_rrarrb(t_stacks **stack_a, t_stacks **stack_b, int c, char s)
 	}
 	return (-1);
 }
-
 
 int	ft_execute_rrarb(t_stacks **stack_a, t_stacks **stack_b, int c, char s)
 {

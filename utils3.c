@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils3.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/12 11:06:08 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/18 22:08:33 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/26 12:19:42 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,11 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd((t + '0'), fd);
 }
 
-
 int	ft_find_place_b(t_stacks *stack_b, int nbr_push)
 {
 	int			i;
 	t_stacks	*tmp;
+
 	i = 1;
 	if (nbr_push > stack_b->nbr && nbr_push < ft_lstlast(stack_b)->nbr)
 		i = 0;
@@ -71,8 +71,8 @@ int	ft_find_place_b(t_stacks *stack_b, int nbr_push)
 
 int	ft_find_place_a(t_stacks *stack_a, int nbr_push)
 {
-	int 		i;
-	t_stacks *tmp;
+	int			i;
+	t_stacks	*tmp;
 
 	i = 1;
 	if (nbr_push < stack_a->nbr && nbr_push > ft_lstlast(stack_a)->nbr)

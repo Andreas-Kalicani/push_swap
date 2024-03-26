@@ -6,7 +6,7 @@
 /*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/27 07:55:23 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/05 19:23:18 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/03/26 12:15:52 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,4 @@ void	ft_add_back(t_stacks **stack, t_stacks *stack_new)
 		*stack = stack_new;
 	else
 		(ft_lstlast(*stack))->next = stack_new;
-
 }

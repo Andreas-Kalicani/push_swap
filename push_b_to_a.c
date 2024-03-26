@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_b_to_a.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akalican <akalican@student.42.fr>          +#+  +:+       +#+        */
+/*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 13:13:56 by andreasgjer       #+#    #+#             */
-/*   Updated: 2024/03/18 18:34:53 by akalican         ###   ########.fr       */
+/*   Updated: 2024/03/26 12:18:06 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
