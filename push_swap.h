@@ -6,7 +6,7 @@
 /*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 10:06:07 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/26 12:49:15 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/03/26 13:05:07 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,6 @@ int					ft_find_index(t_stacks *stacks, int nbr);
 int					ft_atoi2(const char *str);
 
 /* split.c */
-static int			count_words(const char *str, char c);
-static char			*word_dup(const char *str, int start, int finish);
 char				**ft_split(char const *s, char c);
 
 /* ft_add_node_back.c */

@@ -6,7 +6,7 @@
 /*   By: andreasgjertsenkalicani <andreasgjertse    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 10:20:13 by akalican          #+#    #+#             */
-/*   Updated: 2024/03/26 12:15:48 by andreasgjer      ###   ########.fr       */
+/*   Updated: 2024/03/26 13:48:01 by andreasgjer      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ int	ft_execute_rrarb(t_stacks **stack_a, t_stacks **stack_b, int c, char s)
 	}
 	return (-1);
 }
-
+/* need added change*/
 int	ft_execute_rarrb(t_stacks **stack_a, t_stacks **stack_b, int c, char s)
 {
 	if (s == 'a')
